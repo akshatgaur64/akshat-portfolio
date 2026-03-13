@@ -7,89 +7,88 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #050505; color: #fff; margin: 0; padding: 0; }
-        .bento-card { background: #0a0a0a; border: 1px solid rgba(255,255,255,0.05); border-radius: 1.5rem; overflow: hidden; height: 100%; transition: all 0.3s ease; }
-        .bento-card:hover { border-color: #22c55e; }
-        img { width: 100%; height: auto; display: block; object-fit: cover; }
+        body { font-family: 'Inter', sans-serif; background-color: #050505; color: #fff; margin: 0; }
+        .bento-card { background: #0a0a0a; border: 1px solid rgba(255,255,255,0.05); border-radius: 1.5rem; overflow: hidden; transition: all 0.3s ease; }
+        .bento-card:hover { border-color: #3b82f6; }
+        img { width: 100%; height: auto; display: block; border-radius: 0.75rem; }
     </style>
 </head>
-<body class="antialiased selection:bg-green-500/30">
+<body class="antialiased selection:bg-blue-500/30">
 
-    <nav class="fixed top-0 w-full z-50 px-6 py-6 flex justify-between items-center bg-black/60 backdrop-blur-xl border-b border-white/5">
+    <nav class="fixed top-0 w-full z-50 px-10 py-6 flex justify-between items-center bg-black/60 backdrop-blur-xl border-b border-white/5">
         <div class="text-xl font-black tracking-tighter uppercase">Akshat Gaur</div>
-        <div class="flex gap-6 text-[10px] font-bold uppercase tracking-widest opacity-60">
-            <a href="Akshat_Gaur_Resume.pdf" target="_blank" class="hover:text-green-500 transition">Resume</a>
-            <a href="https://www.linkedin.com/in/akshat-gaur-b608ba2a9" target="_blank" class="hover:text-green-500 transition">LinkedIn</a>
+        <div class="flex gap-8 text-[10px] font-bold uppercase tracking-widest opacity-60">
+            <a href="Akshat_Gaur_Resume.pdf" target="_blank" class="hover:text-blue-500 transition">Resume PDF</a>
+            <a href="https://www.linkedin.com/in/akshat-gaur-b608ba2a9" target="_blank" class="hover:text-blue-500 transition">LinkedIn</a>
         </div>
     </nav>
 
-    <section class="pt-40 pb-20 px-6 max-w-6xl mx-auto">
-        <div class="text-green-500 font-bold text-[10px] uppercase tracking-[0.5em] mb-6">Informatics Analyst • Govt of Rajasthan</div>
-        <h1 class="text-6xl md:text-8xl font-black tracking-tighter leading-[0.9] mb-10">STRATEGY<br/><span class="text-neutral-800">MEETS</span> DATA.</h1>
-        <p class="max-w-xl text-neutral-400 text-lg md:text-xl font-medium leading-relaxed">
-            B.Tech CSE @ BTU. Specializing in high-fidelity data governance. 
-            Validated <span class="text-white">10,000+ records</span> with a 40% efficiency gain at the <span class="text-white uppercase font-bold text-sm">SDM Office Chittorgarh</span>.
+    <section class="pt-48 pb-20 px-10 max-w-7xl mx-auto">
+        <div class="text-blue-500 font-bold text-[10px] uppercase tracking-[0.4em] mb-8">Informatics Analyst • Govt of Rajasthan</div>
+        <h1 class="text-7xl md:text-9xl font-black tracking-tighter leading-[0.85] mb-10 text-white uppercase">Strategy<br/><span class="text-neutral-800">Meets</span> Data.</h1>
+        <p class="max-w-2xl text-neutral-400 text-lg md:text-2xl font-medium leading-relaxed">
+            B.Tech CSE @ BTU. Engineered automated systems for the <span class="text-white">SDM Office</span>. 
+            Validated <span class="text-white">10,000+ records</span> with a 40% efficiency gain.
         </p>
     </section>
 
-    <section class="px-6 py-20 max-w-6xl mx-auto border-t border-white/5">
-        <h2 class="text-3xl font-black tracking-tighter mb-12 uppercase">Professional Experience</h2>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-            <div class="bento-card">
-                <div class="p-6">
-                    <p class="text-[10px] font-bold text-green-500 uppercase tracking-widest mb-4">Statewide Data Reconciliation</p>
-                    <img src="Table%20of%20government%20records.png" class="rounded-lg shadow-2xl" alt="Database Records">
-                </div>
+    <section class="px-10 py-20 max-w-7xl mx-auto border-t border-white/5">
+        <h2 class="text-4xl font-black tracking-tighter mb-12 uppercase">Professional Experience</h2>
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+            
+            <div class="md:col-span-7 bento-card p-6">
+                <p class="text-[10px] font-bold text-blue-500 uppercase tracking-widest mb-4">Operational Analytics Dashboard</p>
+                <img src="Internship_work dashboard.png" alt="Internship Work">
+            </div>
+
+            <div class="md:col-span-5 bento-card p-8 flex flex-col justify-center items-center text-center bg-blue-600">
+                <div class="text-7xl font-black text-white mb-2 italic">10K+</div>
+                <div class="text-xs font-bold uppercase tracking-widest text-blue-100">Records Processed</div>
+            </div>
+
+            <div class="md:col-span-12 bento-card p-6">
+                <p class="text-[10px] font-bold text-blue-500 uppercase tracking-widest mb-4">Statewide Database Reconciliation</p>
+                <img src="Table of government records.png" alt="Table Records">
+            </div>
+
+            <div class="md:col-span-4 bento-card p-6 flex flex-col items-center justify-center">
+                <img src="akshat_profile.png" class="w-32 h-32 rounded-full mb-4 object-cover grayscale hover:grayscale-0 transition" alt="Akshat Gaur">
+                <p class="text-xs text-neutral-500 uppercase font-bold tracking-widest">Informatics Specialist</p>
             </div>
             
-            <div class="bento-card">
-                <div class="p-6">
-                    <p class="text-[10px] font-bold text-green-500 uppercase tracking-widest mb-4">Operational Analytics Dashboard</p>
-                    <img src="Internship_work_dashboard.png" class="rounded-lg shadow-2xl" alt="Work Dashboard">
-                </div>
-            </div>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="md:col-span-2 bento-card p-10 flex flex-col justify-center bg-neutral-900/50">
-                <h3 class="text-2xl font-bold mb-4 italic">SDM Office Informatics Audit</h3>
-                <p class="text-neutral-500 text-sm leading-relaxed mb-6">
-                    Managed large-scale database verification for the Rajasthan Government. 
-                    Implemented automated reconciliation logic to handle 10,000+ entries across multiple departments.
+            <div class="md:col-span-8 bento-card p-10 flex flex-col justify-center bg-neutral-900/50">
+                <h3 class="text-2xl font-bold mb-4 italic">SDM Office Chittorgarh Audit</h3>
+                <p class="text-neutral-500 text-sm leading-relaxed mb-8">
+                    Managed statewide citizen data reconciliation. Automated verification workflows using Python and SQL, reducing reporting cycles significantly.
                 </p>
-                <a href="internship_certificate.pdf" target="_blank" class="inline-block border-b-2 border-green-500 pb-1 self-start text-xs font-black uppercase tracking-widest">Verify Certificate</a>
-            </div>
-            <div class="bento-card p-10 flex flex-col justify-center items-center text-center bg-green-600">
-                <div class="text-6xl font-black mb-2 leading-none">10K+</div>
-                <div class="text-[10px] font-black uppercase tracking-widest text-green-100 opacity-80">Records Validated</div>
+                <a href="internship_certificate.pdf" target="_blank" class="inline-block border-b-2 border-blue-500 pb-1 self-start text-xs font-black uppercase tracking-widest">Verify SDM Certificate</a>
             </div>
         </div>
     </section>
 
-    <section class="px-6 py-20 max-w-6xl mx-auto border-t border-white/5 pb-40">
-        <h2 class="text-3xl font-black tracking-tighter mb-12 uppercase">Core Projects</h2>
-        <div class="grid md:grid-cols-2 gap-8">
+    <section class="px-10 py-20 max-w-7xl mx-auto border-t border-white/5">
+        <h2 class="text-4xl font-black tracking-tighter mb-12 uppercase">Core Projects</h2>
+        <div class="grid md:grid-cols-2 gap-12">
             <div class="bento-card p-8">
-                <h4 class="text-xl font-black mb-4 uppercase">JanSahay AI</h4>
-                <p class="text-neutral-500 text-sm mb-8 leading-relaxed italic">94.2% Accuracy in automated grievance classification.</p>
-                <img src="dashboard.png" class="rounded-xl mb-8" alt="Project 1">
-                <div class="flex gap-4">
-                    <img src="adminlog.png" class="w-1/2 rounded-lg grayscale" alt="Logs">
-                    <img src="welfare.png" class="w-1/2 rounded-lg grayscale" alt="Welfare">
+                <h3 class="text-2xl font-black mb-4 uppercase">JanSahay AI</h3>
+                <p class="text-neutral-500 text-sm mb-8 leading-relaxed italic">94.2% AI resolution accuracy via NLP classification.</p>
+                <img src="dashboard.png" class="mb-6" alt="Dashboard">
+                <div class="grid grid-cols-2 gap-4">
+                    <img src="adminlog.png" alt="Admin Log">
+                    <img src="welfare.png" alt="Welfare">
                 </div>
             </div>
             <div class="bento-card p-8">
-                <h4 class="text-xl font-black mb-4 uppercase">Weather Engine</h4>
+                <h3 class="text-2xl font-black mb-4 uppercase">Weather Engine</h3>
                 <p class="text-neutral-500 text-sm mb-8 leading-relaxed italic">Predictive meteorological analytics using Django.</p>
-                <img src="home_page.png" class="rounded-xl mb-8" alt="Project 2">
-                <img src="prediction_trend.png" class="w-full rounded-lg" alt="Prediction">
+                <img src="home_page.png" class="mb-6" alt="Weather">
+                <img src="prediction_trend.png" alt="Trends">
             </div>
         </div>
     </section>
 
     <footer class="py-20 text-center border-t border-white/5 bg-neutral-950">
-        <p class="text-neutral-600 text-[10px] font-bold uppercase tracking-[0.5em]">akshatgaur44@gmail.com • Bikaner Technical University</p>
+        <p class="text-neutral-600 text-[10px] font-bold uppercase tracking-[0.5em]">akshatgaur44@gmail.com • +91-8690630121</p>
     </footer>
 
 </body>
