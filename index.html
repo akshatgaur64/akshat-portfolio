@@ -3,93 +3,259 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Akshat Gaur | Informatics & AI Engineer</title>
+    <title>Akshat Gaur | AI & ML Developer • Informatics Specialist</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #050505; color: #fff; margin: 0; }
-        .bento-card { background: #0a0a0a; border: 1px solid rgba(255,255,255,0.05); border-radius: 1.5rem; overflow: hidden; transition: all 0.3s ease; }
-        .bento-card:hover { border-color: #3b82f6; }
-        img { width: 100%; height: auto; display: block; border-radius: 0.75rem; }
+        :root { --accent: #22c55e; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #fafafa; color: #1f2937; scroll-behavior: smooth; overflow-x: hidden;}
+        
+        /* Sidebar Styling */
+        .sidebar-gradient { background: linear-gradient(180deg, #16a34a 0%, #15803d 100%); }
+        .nav-link { transition: all 0.3s ease; border-radius: 0.75rem; color: rgba(255,255,255,0.8); }
+        .nav-link:hover, .nav-link.active { background: white; color: #15803d; }
+
+        /* Component Styling */
+        .studio-card { background: white; border: 1px solid #f3f4f6; border-radius: 2rem; transition: all 0.5s ease; overflow: hidden; }
+        .studio-card:hover { border-color: #eee; transform: translateY(-5px); box-shadow: 0 40px 80px -20px rgba(0,0,0,0.05); }
+        .tech-badge { background: #f0fdf4; color: #16a34a; padding: 4px 12px; border-radius: 99px; font-size: 0.75rem; font-weight: 600; border: 1px solid #dcfce7; }
+        .text-huge { font-size: clamp(3rem, 7vw, 6rem); line-height: 0.9; letter-spacing: -0.04em; }
     </style>
 </head>
-<body class="antialiased selection:bg-blue-500/30">
+<body class="flex flex-col md:flex-row min-h-screen">
 
-    <nav class="fixed top-0 w-full z-50 px-10 py-6 flex justify-between items-center bg-black/60 backdrop-blur-xl border-b border-white/5">
-        <div class="text-xl font-black tracking-tighter uppercase">Akshat Gaur</div>
-        <div class="flex gap-8 text-[10px] font-bold uppercase tracking-widest opacity-60">
-            <a href="Akshat_Gaur_Resume.pdf" target="_blank" class="hover:text-blue-500 transition">Resume PDF</a>
-            <a href="https://www.linkedin.com/in/akshat-gaur-b608ba2a9" target="_blank" class="hover:text-blue-500 transition">LinkedIn</a>
+    <aside class="w-full md:w-80 sidebar-gradient text-white md:fixed h-full z-50 flex flex-col p-8 overflow-y-auto">
+        <div class="text-center mb-10">
+            <div class="relative inline-block mb-4">
+                <img src="public/akshat_profile.png" alt="Akshat Gaur" class="w-32 h-32 rounded-full object-cover border-4 border-white/20 shadow-xl bg-gray-100">
+                <div class="absolute bottom-1 right-1 w-6 h-6 bg-green-400 border-4 border-white rounded-full"></div>
+            </div>
+            <h1 class="text-2xl font-extrabold tracking-tight">Akshat Gaur</h1>
+            <p class="text-green-100 text-sm font-medium mt-1">AI & ML Developer</p>
         </div>
-    </nav>
 
-    <section class="pt-48 pb-20 px-10 max-w-7xl mx-auto">
-        <div class="text-blue-500 font-bold text-[10px] uppercase tracking-[0.4em] mb-8">Informatics Analyst • Govt of Rajasthan</div>
-        <h1 class="text-7xl md:text-9xl font-black tracking-tighter leading-[0.85] mb-10 text-white uppercase">Strategy<br/><span class="text-neutral-800">Meets</span> Data.</h1>
-        <p class="max-w-2xl text-neutral-400 text-lg md:text-2xl font-medium leading-relaxed">
-            B.Tech CSE @ BTU. Engineered automated systems for the <span class="text-white">SDM Office</span>. 
-            Validated <span class="text-white">10,000+ records</span> with a 40% efficiency gain.
+        <p class="text-green-50 text-xs leading-relaxed text-center opacity-80 mb-10">
+            Building real-world intelligent systems using Machine Learning, NLP, and Deep Learning.
         </p>
-    </section>
 
-    <section class="px-10 py-20 max-w-7xl mx-auto border-t border-white/5">
-        <h2 class="text-4xl font-black tracking-tighter mb-12 uppercase">Professional Experience</h2>
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
-            
-            <div class="md:col-span-7 bento-card p-6">
-                <p class="text-[10px] font-bold text-blue-500 uppercase tracking-widest mb-4">Operational Analytics Dashboard</p>
-                <img src="Internship_work dashboard.png" alt="Internship Work">
-            </div>
+        <nav class="flex-grow space-y-2 mb-10">
+            <a href="#about" class="nav-link flex items-center gap-4 p-3 text-sm font-semibold active">
+                <i data-lucide="user" class="w-4 h-4"></i> About Me
+            </a>
+            <a href="#portfolio" class="nav-link flex items-center gap-4 p-3 text-sm font-semibold">
+                <i data-lucide="layout-grid" class="w-4 h-4"></i> Portfolio
+            </a>
+            <a href="#skills" class="nav-link flex items-center gap-4 p-3 text-sm font-semibold">
+                <i data-lucide="code-2" class="w-4 h-4"></i> Skills
+            </a>
+            <a href="#contact" class="nav-link flex items-center gap-4 p-3 text-sm font-semibold">
+                <i data-lucide="mail" class="w-4 h-4"></i> Contact
+            </a>
+        </nav>
 
-            <div class="md:col-span-5 bento-card p-8 flex flex-col justify-center items-center text-center bg-blue-600">
-                <div class="text-7xl font-black text-white mb-2 italic">10K+</div>
-                <div class="text-xs font-bold uppercase tracking-widest text-blue-100">Records Processed</div>
-            </div>
-
-            <div class="md:col-span-12 bento-card p-6">
-                <p class="text-[10px] font-bold text-blue-500 uppercase tracking-widest mb-4">Statewide Database Reconciliation</p>
-                <img src="Table of government records.png" alt="Table Records">
-            </div>
-
-            <div class="md:col-span-4 bento-card p-6 flex flex-col items-center justify-center">
-                <img src="akshat_profile.png" class="w-32 h-32 rounded-full mb-4 object-cover grayscale hover:grayscale-0 transition" alt="Akshat Gaur">
-                <p class="text-xs text-neutral-500 uppercase font-bold tracking-widest">Informatics Specialist</p>
-            </div>
-            
-            <div class="md:col-span-8 bento-card p-10 flex flex-col justify-center bg-neutral-900/50">
-                <h3 class="text-2xl font-bold mb-4 italic">SDM Office Chittorgarh Audit</h3>
-                <p class="text-neutral-500 text-sm leading-relaxed mb-8">
-                    Managed statewide citizen data reconciliation. Automated verification workflows using Python and SQL, reducing reporting cycles significantly.
-                </p>
-                <a href="internship_certificate.pdf" target="_blank" class="inline-block border-b-2 border-blue-500 pb-1 self-start text-xs font-black uppercase tracking-widest">Verify SDM Certificate</a>
-            </div>
+        <div class="flex justify-center gap-6 mb-8 opacity-70">
+            <a href="https://github.com/akshatgaur64" class="hover:text-black transition"><i data-lucide="github" class="w-5 h-5"></i></a>
+            <a href="https://www.linkedin.com/in/akshat-gaur-b608ba2a9" class="hover:text-black transition"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
         </div>
-    </section>
 
-    <section class="px-10 py-20 max-w-7xl mx-auto border-t border-white/5">
-        <h2 class="text-4xl font-black tracking-tighter mb-12 uppercase">Core Projects</h2>
-        <div class="grid md:grid-cols-2 gap-12">
-            <div class="bento-card p-8">
-                <h3 class="text-2xl font-black mb-4 uppercase">JanSahay AI</h3>
-                <p class="text-neutral-500 text-sm mb-8 leading-relaxed italic">94.2% AI resolution accuracy via NLP classification.</p>
-                <img src="dashboard.png" class="mb-6" alt="Dashboard">
-                <div class="grid grid-cols-2 gap-4">
-                    <img src="adminlog.png" alt="Admin Log">
-                    <img src="welfare.png" alt="Welfare">
+        <a href="public/Akshat_Gaur_Resume.pdf" class="bg-white text-green-700 py-4 rounded-xl font-bold text-center text-sm shadow-lg hover:bg-green-50 transition active:scale-95 uppercase tracking-widest">
+            Download Resume
+        </a>
+    </aside>
+
+    <main class="flex-1 md:ml-80">
+        
+        <section id="about" class="min-h-screen flex items-center px-8 md:px-20 py-20 bg-white hero-gradient">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="space-y-6">
+                    <h2 class="text-huge font-extrabold tracking-tighter text-gray-900">Akshat <span class="text-gray-200">Gaur</span></h2>
+                    <p class="text-green-600 font-bold uppercase text-xs tracking-[0.4em]">Informatics Analyst • Govt of Rajasthan</p>
+                    <p class="max-w-xl text-gray-500 text-xl font-medium leading-relaxed">
+                        I specialize in engineering high-fidelity systems in <span class="text-gray-900 font-bold">NLP, Deep Learning, and Predictive Analytics</span>. Specialized in building automated AI systems with validated impact for the <strong>SDM Office</strong>.
+                    </p>
+                    <div class="flex gap-4 pt-6">
+                        <a href="#portfolio" class="bg-black text-white px-8 py-4 rounded-xl font-bold text-sm uppercase tracking-widest hover:bg-gray-800 transition">View Portfolio</a>
+                        <a href="#contact" class="border border-gray-200 px-8 py-4 rounded-xl font-bold text-sm uppercase tracking-widest hover:bg-gray-50 transition">Contact Me</a>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <img src="public/akshat_profile.png" alt="Akshat Gaur" class="rounded-[3rem] grayscale hover:grayscale-0 transition-all duration-700 shadow-2xl">
                 </div>
             </div>
-            <div class="bento-card p-8">
-                <h3 class="text-2xl font-black mb-4 uppercase">Weather Engine</h3>
-                <p class="text-neutral-500 text-sm mb-8 leading-relaxed italic">Predictive meteorological analytics using Django.</p>
-                <img src="home_page.png" class="mb-6" alt="Weather">
-                <img src="prediction_trend.png" alt="Trends">
+        </section>
+
+        <section class="py-32 px-8 md:px-20 bg-gray-50/50">
+            <h2 class="text-3xl font-extrabold tracking-tight mb-16 text-center">Core Competencies</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="studio-card p-8 text-center">
+                    <div class="w-12 h-12 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-6 text-green-600"><i data-lucide="brain"></i></div>
+                    <h3 class="font-bold mb-3">ML Systems</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed">Designing end-to-end learning architectures from scratch.</p>
+                </div>
+                <div class="studio-card p-8 text-center">
+                    <div class="w-12 h-12 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-6 text-blue-600"><i data-lucide="message-square"></i></div>
+                    <h3 class="font-bold mb-3">NLP Automation</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed">Automating text-based workflows using advanced Transformers.</p>
+                </div>
+                <div class="studio-card p-8 text-center">
+                    <div class="w-12 h-12 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-6 text-purple-600"><i data-lucide="trending-up"></i></div>
+                    <h3 class="font-bold mb-3">Predictive Analytics</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed">Forecasting complex market and environmental trends.</p>
+                </div>
+                <div class="studio-card p-8 text-center">
+                    <div class="w-12 h-12 bg-orange-100 rounded-2xl flex items-center justify-center mx-auto mb-6 text-orange-600"><i data-lucide="bar-chart-3"></i></div>
+                    <h3 class="font-bold mb-3">Data Viz</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed">Transforming raw datasets into actionable visual stories.</p>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <footer class="py-20 text-center border-t border-white/5 bg-neutral-950">
-        <p class="text-neutral-600 text-[10px] font-bold uppercase tracking-[0.5em]">akshatgaur44@gmail.com • +91-8690630121</p>
-    </footer>
+        <section id="portfolio" class="py-32 px-8 md:px-20 bg-white">
+            <h2 class="text-4xl font-extrabold tracking-tight mb-20 text-center">Selected Portfolios</h2>
 
+            <div class="mb-40 grid lg:grid-cols-2 gap-16 items-start">
+                <div class="space-y-8">
+                    <div>
+                        <h3 class="text-3xl font-extrabold mb-4 tracking-tighter">JanSahay: AI Governance</h3>
+                        <p class="text-gray-500 text-lg leading-relaxed">An NLP-driven ecosystem classifying statewide grievances with <strong>94.2% AI accuracy</strong> and automated routing.</p>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 gap-4 text-sm">
+                        <div class="p-6 border-l-4 border-green-500 bg-gray-50">
+                            <span class="font-bold block mb-1">Situation</span>
+                            <span class="text-gray-600">Manual grievance routing was inefficient and prone to error.</span>
+                        </div>
+                        <div class="p-6 border-l-4 border-blue-500 bg-gray-50">
+                            <span class="font-bold block mb-1">Task</span>
+                            <span class="text-gray-600">Build an automated classification and predictive welfare system.</span>
+                        </div>
+                        <div class="p-6 border-l-4 border-purple-500 bg-gray-50">
+                            <span class="font-bold block mb-1">Action</span>
+                            <span class="text-gray-600">Developed NLP pipeline (TF-IDF + Naive Bayes) and Random Forest predictor.</span>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap gap-2 pt-4">
+                        <span class="tech-badge">Python</span> <span class="tech-badge">Scikit-learn</span> <span class="tech-badge">Flask</span> <span class="tech-badge">NLP</span>
+                    </div>
+                </div>
+                <div class="space-y-4">
+                    <img src="public/dashboard.png" class="rounded-3xl border border-gray-100 shadow-2xl" alt="JanSahay">
+                    <div class="grid grid-cols-2 gap-4">
+                        <img src="public/adminlog.png" class="rounded-2xl border border-gray-100 shadow-xl" alt="Log">
+                        <img src="public/welfare.png" class="rounded-2xl border border-gray-100 shadow-xl" alt="Welfare">
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <img src="public/home_page.png" class="rounded-3xl border border-gray-100 shadow-2xl lg:order-1 order-2" alt="Weather">
+                <div class="space-y-8 lg:order-2 order-1">
+                    <h3 class="text-3xl font-extrabold mb-4 tracking-tighter">Predictive Weather Analytics</h3>
+                    <p class="text-gray-500 text-lg leading-relaxed">
+                        A Django-powered forecasting platform utilizing historical meteorological data and real-time APIs to deliver visual dashboards.
+                    </p>
+                    <ul class="space-y-4 text-gray-600 text-sm font-medium">
+                        <li class="flex items-center gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-green-500"></i> Integrated Real-time REST APIs</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-green-500"></i> Random Forest Regression Models</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-green-500"></i> Visual, Data-First Dashboards</li>
+                    </ul>
+                    <div class="flex flex-wrap gap-2 pt-4">
+                        <span class="tech-badge">Django</span> <span class="tech-badge">Pandas</span> <span class="tech-badge">Regression</span> <span class="tech-badge">ML</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="py-32 px-8 md:px-20 bg-gray-50">
+            <h2 class="text-3xl font-extrabold mb-16 text-center">Technical Arsenal</h2>
+            <div class="grid md:grid-cols-3 gap-12">
+                <div class="space-y-6">
+                    <h4 class="text-green-600 font-bold uppercase text-xs tracking-widest">AI & Machine Learning</h4>
+                    <div class="space-y-4">
+                        <div><div class="flex justify-between mb-2 text-sm font-bold"><span>Python / Scikit-Learn</span><span>95%</span></div><div class="h-2 bg-gray-200 rounded-full"><div class="h-full bg-green-500 rounded-full" style="width: 95%;"></div></div></div>
+                        <div><div class="flex justify-between mb-2 text-sm font-bold"><span>NLP / LSTM</span><span>90%</span></div><div class="h-2 bg-gray-200 rounded-full"><div class="h-full bg-green-500 rounded-full" style="width: 90%;"></div></div></div>
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <h4 class="text-blue-600 font-bold uppercase text-xs tracking-widest">Backend Engineering</h4>
+                    <div class="space-y-4">
+                        <div><div class="flex justify-between mb-2 text-sm font-bold"><span>Django / Flask</span><span>85%</span></div><div class="h-2 bg-gray-200 rounded-full"><div class="h-full bg-blue-500 rounded-full" style="width: 85%;"></div></div></div>
+                        <div><div class="flex justify-between mb-2 text-sm font-bold"><span>RESTful APIs</span><span>90%</span></div><div class="h-2 bg-gray-200 rounded-full"><div class="h-full bg-blue-500 rounded-full" style="width: 90%;"></div></div></div>
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <h4 class="text-purple-600 font-bold uppercase text-xs tracking-widest">Core Tools</h4>
+                    <div class="space-y-4">
+                        <div class="flex flex-wrap gap-3">
+                            <span class="px-4 py-2 bg-white border border-gray-100 rounded-xl font-bold text-xs">Git / GitHub</span>
+                            <span class="px-4 py-2 bg-white border border-gray-100 rounded-xl font-bold text-xs">VS Code</span>
+                            <span class="px-4 py-2 bg-white border border-gray-100 rounded-xl font-bold text-xs">Excel / Colab</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-40 px-8 md:px-20 text-center bg-white border-y border-gray-100">
+            <div class="mb-20 space-y-4 max-w-xl mx-auto">
+                <span class="text-green-600 font-black text-[10px] uppercase tracking-widest">Validated Impact</span>
+                <h3 class="text-5xl font-extrabold tracking-tighter text-gray-900">10,000+ records</h3>
+                <p class="text-gray-500 text-lg leading-relaxed">Statewide citizen data reconciled and validated for the <strong>Government of Rajasthan SDM Office</strong>, reducing reporting cycles by 40%.</p>
+            </div>
+            <div class="p-16 border-2 border-dashed border-gray-200 rounded-[3rem] bg-gray-50/50">
+                <div class="grid lg:grid-cols-2 gap-10 items-center">
+                    <img src="public/Table_of_government_records.png" class="rounded-2xl border border-gray-100 shadow-xl" alt="Data Proof">
+                    <div class="space-y-8">
+                        <i data-lucide="award" class="w-16 h-16 text-green-500 mx-auto"></i>
+                        <p class="text-gray-500 max-w-sm mx-auto italic leading-relaxed">"Akshat demonstrated excellent work in handling the Rajasthan government database, reconciling 10,000+ citizen records."</p>
+                        <a href="public/internship_certificate.pdf" target="_blank" class="inline-flex items-center gap-3 border border-gray-200 px-10 py-5 rounded-2xl font-black shadow-lg hover:bg-gray-50 transition transform active:scale-95 text-xs uppercase tracking-widest">
+                             Verify SDM Certificate
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer id="contact" class="py-32 px-8 md:px-20 bg-gray-900 text-white rounded-t-[4rem]">
+            <div class="max-w-4xl mx-auto text-center">
+                <i data-lucide="rocket" class="w-16 h-16 text-green-400 mx-auto mb-10"></i>
+                <h2 class="text-4xl font-extrabold mb-6 italic tracking-tighter">Open to opportunities & collaborations.</h2>
+                <p class="text-gray-400 mb-12">I'm focused on engineering high-impact, statewide AI initiatives. Let's connect.</p>
+                <div class="flex flex-col md:flex-row justify-center gap-10 items-center text-sm font-bold opacity-70">
+                    <a href="mailto:akshatgaur44@gmail.com" class="flex items-center gap-3 hover:text-green-400 transition"><i data-lucide="mail"></i> akshatgaur44@gmail.com</a>
+                    <a href="https://linkedin.com/in/akshat-gaur-b608ba2a9" class="flex items-center gap-3 hover:text-blue-400 transition"><i data-lucide="linkedin"></i> LinkedIn</a>
+                    <a href="https://github.com/akshatgaur64" class="flex items-center gap-3 hover:text-gray-400 transition"><i data-lucide="github"></i> GitHub</a>
+                </div>
+            </div>
+        </footer>
+
+    </main>
+
+    <script>
+        lucide.createIcons();
+
+        // Simple active nav script
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            let current = "";
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
