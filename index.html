@@ -12,24 +12,26 @@
             --sidebar-grad: linear-gradient(180deg, #2f6fed 0%, #22c55e 100%);
             --bg: #f4f6f9;
             --accent: #2f6fed;
-            --primary-btn: #22c55e;
         }
-        body { font-family: 'Inter', sans-serif; background-color: var(--bg); color: #111; scroll-behavior: smooth; }
-        
+        body { font-family: 'Inter', sans-serif; background-color: var(--bg); color: #111; scroll-behavior: smooth; overflow-x: hidden; }
         .sidebar { background: var(--sidebar-grad); }
         .nav-link { transition: all 0.3s ease; border-radius: 8px; color: rgba(255,255,255,0.7); font-weight: 500; }
         .nav-link:hover, .nav-link.active { background: rgba(255,255,255,0.15); color: #ffffff; }
-        
-        .glass-card { background: #ffffff; border: 1px solid #e2e8f0; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); overflow: hidden; }
+        .glass-card { background: #ffffff; border-radius: 12px; border: 1px solid #e2e8f0; transition: all 0.4s ease; overflow: hidden; cursor: zoom-in; }
         .glass-card:hover { transform: translateY(-5px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05); }
-        
         .reveal { opacity: 0; transform: translateY(20px); transition: all 0.6s ease-out; }
         .reveal.active { opacity: 1; transform: translateY(0); }
         
+        /* Lightbox Overlay */
+        #lightbox { display: none; position: fixed; z-index: 1000; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); justify-content: center; align-items: center; cursor: zoom-out; }
+        #lightbox img { max-width: 90%; max-height: 80%; border-radius: 8px; box-shadow: 0 0 50px rgba(0,0,0,0.5); }
+
         @media (max-width: 768px) { .sidebar { position: relative; height: auto; width: 100%; } .main-content { margin-left: 0 !important; } }
     </style>
 </head>
 <body class="flex flex-col md:flex-row min-h-screen">
+
+    <div id="lightbox" onclick="this.style.display='none'"><img id="lightbox-img" src="" alt="Enlarged"></div>
 
     <aside class="sidebar w-full md:w-80 md:fixed h-full z-50 flex flex-col p-8 text-white shadow-2xl">
         <div class="text-center mb-8">
@@ -38,14 +40,24 @@
             <p class="text-[10px] font-bold text-white/70 uppercase tracking-[0.2em] mt-1">AI & ML Engineer</p>
         </div>
 
-        <nav class="flex-grow space-y-1 mb-10">
-            <a href="#about" class="nav-link flex items-center gap-4 p-3 text-sm active"><i data-lucide="user" class="w-4 h-4"></i> About</a>
-            <a href="#portfolio" class="nav-link flex items-center gap-4 p-3 text-sm"><i data-lucide="layout-grid" class="w-4 h-4"></i> Portfolio</a>
-            <a href="#verification" class="nav-link flex items-center gap-4 p-3 text-sm"><i data-lucide="shield-check" class="w-4 h-4"></i> Verification</a>
+        <nav class="flex-grow space-y-1 mb-8">
+            <a href="#about" class="nav-link flex items-center gap-4 p-3 text-sm"><i data-lucide="user" class="w-4 h-4"></i> About</a>
+            <a href="#internship" class="nav-link flex items-center gap-4 p-3 text-sm"><i data-lucide="shield-check" class="w-4 h-4"></i> Internship Proof</a>
+            <a href="#portfolio" class="nav-link flex items-center gap-4 p-3 text-sm"><i data-lucide="layout-grid" class="w-4 h-4"></i> Projects</a>
             <a href="#skills" class="nav-link flex items-center gap-4 p-3 text-sm"><i data-lucide="cpu" class="w-4 h-4"></i> Skills</a>
         </nav>
 
-        <a href="Akshat_Gaur_Resume.pdf" target="_blank" class="w-full bg-white text-[#2f6fed] py-3 rounded-lg font-black text-center text-[10px] uppercase tracking-widest shadow-lg hover:bg-gray-50 transition">
+        <div class="space-y-4 mb-10 text-white/80">
+            <a href="mailto:akshatgaur44@gmail.com" class="flex items-center gap-3 text-[11px] hover:text-white transition"><i data-lucide="mail" class="w-4 h-4"></i> akshatgaur44@gmail.com</a>
+            <a href="tel:+918690630121" class="flex items-center gap-3 text-[11px] hover:text-white transition"><i data-lucide="phone" class="w-4 h-4"></i> +91 86906 30121</a>
+        </div>
+
+        <div class="flex justify-center gap-5 mb-8">
+            <a href="https://github.com/akshatgaur64" target="_blank" class="hover:scale-110 transition"><i data-lucide="github"></i></a>
+            <a href="https://linkedin.com/in/akshat-gaur-b608ba2a9" target="_blank" class="hover:scale-110 transition"><i data-lucide="linkedin"></i></a>
+        </div>
+
+        <a href="Akshat_Gaur_Resume.pdf" target="_blank" class="w-full bg-white text-[#2f6fed] py-3 rounded-lg font-800 text-center text-[10px] uppercase tracking-widest shadow-lg hover:bg-gray-100 transition">
             Download Resume
         </a>
     </aside>
@@ -58,95 +70,90 @@
                     <span class="text-[10px] font-black text-gray-400 uppercase tracking-[0.3em] mb-4 block">Personal Portfolio</span>
                     <h2 class="text-6xl font-800 tracking-tighter mb-4 italic uppercase">Akshat Gaur</h2>
                     <p class="text-[#2f6fed] font-bold text-lg mb-8 uppercase tracking-widest">AI & Machine Learning Engineer</p>
-                    <p class="text-[#666] text-lg leading-relaxed mb-10 max-w-lg italic">
-                        "Engineering high-fidelity AI systems in NLP and Predictive Analytics. Specialized in building automated government informatics for public sector resolution."
+                    <p class="text-[#666] text-lg leading-relaxed mb-10 italic">
+                        Specializing in <strong>NLP, Predictive Analytics, and Deep Learning</strong>. I engineer scalable AI solutions for real-world governance challenges.
                     </p>
                     <div class="flex flex-wrap gap-4">
-                        <a href="#portfolio" class="bg-[#22c55e] text-white px-8 py-4 rounded-lg font-bold text-xs uppercase tracking-widest shadow-xl hover:brightness-110 transition">View Portfolio</a>
-                        <a href="mailto:akshatgaur44@gmail.com" class="border-2 border-gray-200 text-gray-800 px-8 py-4 rounded-lg font-bold text-xs uppercase tracking-widest hover:bg-gray-50 transition">Contact Me</a>
+                        <a href="#portfolio" class="bg-[#22c55e] text-white px-8 py-4 rounded-lg font-bold text-xs uppercase tracking-widest shadow-xl hover:brightness-110 transition">View Portfolios</a>
+                        <a href="#skills" class="border-2 border-gray-200 text-gray-800 px-8 py-4 rounded-lg font-bold text-xs uppercase tracking-widest hover:bg-gray-50 transition">Tech Stack</a>
                     </div>
                 </div>
                 <div class="hidden md:block reveal active">
                     <div class="relative">
-                        <img src="dashboard.png" class="rounded-2xl shadow-2xl border border-gray-100 transform -rotate-1 hover:rotate-0 transition duration-500" alt="Mockup">
+                        <img src="dashboard.png" onclick="openLightbox(this.src)" class="rounded-2xl shadow-2xl border border-gray-100 transform -rotate-1 hover:rotate-0 transition duration-500 cursor-zoom-in" alt="Main Portfolio">
                         <div class="absolute -bottom-6 -right-6 bg-white p-5 rounded-2xl shadow-xl border border-gray-50">
-                            <p class="text-[10px] font-black uppercase text-[#22c55e] tracking-tighter italic">Validated Experience</p>
+                            <p class="text-[10px] font-black uppercase text-[#22c55e] tracking-tighter italic">94.2% Model Accuracy</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="portfolio" class="py-32 px-8 md:px-20 bg-gray-50/50">
-            <h2 class="text-3xl font-800 mb-20 uppercase tracking-tighter italic text-center">Featured Portfolios</h2>
+        <section id="internship" class="py-32 px-8 md:px-20 bg-gray-50/50">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-800 mb-4 uppercase tracking-tighter italic">Internship Performance Proof</h2>
+                <p class="text-[#666] max-w-xl mx-auto font-medium">Data Validation & Informatics Audit at SDM Office, Government of Rajasthan.</p>
+            </div>
             
-            <div class="space-y-12 max-w-6xl mx-auto">
-                <div class="glass-card grid lg:grid-cols-5 reveal">
-                    <div class="lg:col-span-2 p-10 flex flex-col justify-center bg-white border-r border-gray-50">
-                        <h3 class="text-2xl font-800 mb-2 uppercase italic tracking-tighter">JanSahay AI</h3>
-                        <p class="text-[10px] font-bold text-[#22c55e] uppercase tracking-widest mb-6 italic">Architecture: AI Governance</p>
-                        <ul class="space-y-4 text-[#666] text-xs leading-relaxed mb-8">
-                            <li class="flex gap-2 font-medium italic"><i data-lucide="check" class="w-4 h-4 text-[#22c55e] shrink-0"></i> Designed NLP classification pipeline for 10K+ records.</li>
-                            <li class="flex gap-2 font-medium italic"><i data-lucide="check" class="w-4 h-4 text-[#22c55e] shrink-0"></i> Optimized resolving logic to 94.2% AI Accuracy.</li>
-                            <li class="flex gap-2 font-medium italic"><i data-lucide="check" class="w-4 h-4 text-[#22c55e] shrink-0"></i> Engineered automated routing for welfare prediction.</li>
-                        </ul>
-                        <div class="flex gap-4">
-                            <a href="https://github.com/akshatgaur64" target="_blank" class="text-[10px] font-black uppercase tracking-widest text-[#2f6fed] border-b-2 border-[#2f6fed]">GitHub Source</a>
+            <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                <div class="glass-card p-6 reveal">
+                    <p class="text-[9px] font-black text-blue-500 uppercase tracking-widest mb-3 italic">Verified: 10,000+ Records Reconciliation</p>
+                    <img src="Table of government records.png" onclick="openLightbox(this.src)" class="rounded-lg border shadow-sm w-full h-64 object-cover" alt="Database Table">
+                </div>
+                <div class="glass-card p-6 reveal">
+                    <p class="text-[9px] font-black text-blue-500 uppercase tracking-widest mb-3 italic">Analytics Dashboard (Excel Implementation)</p>
+                    <img src="internship_dashboard.png" onclick="openLightbox(this.src)" class="rounded-lg border shadow-sm w-full h-64 object-cover" alt="Internship Work">
+                </div>
+                <div class="md:col-span-2 glass-card p-8 bg-emerald-50 border-emerald-100 flex flex-col md:flex-row items-center justify-between gap-6 reveal">
+                    <div class="flex items-center gap-6">
+                        <i data-lucide="award" class="w-16 h-16 text-[#22c55e]"></i>
+                        <div>
+                            <h4 class="font-800 text-xl uppercase italic tracking-tighter">Letter of Appreciation</h4>
+                            <p class="text-[11px] text-gray-500 italic">"Recognized for handling statewide data with 40% increased operational efficiency."</p>
                         </div>
                     </div>
-                    <div class="lg:col-span-3 bg-gray-100 flex items-center justify-center p-6">
-                        <img src="dashboard.png" class="rounded-xl shadow-2xl border border-white" alt="JanSahay Visual">
+                    <a href="internship_certificate.pdf" target="_blank" class="bg-[#22c55e] text-white px-8 py-4 rounded-xl font-black text-[10px] uppercase tracking-widest shadow-lg hover:brightness-110 transition">View Letter of Appreciation ↗</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio" class="py-32 px-8 md:px-20 bg-white">
+            <h2 class="text-3xl font-800 mb-20 uppercase tracking-tighter italic text-center">Core AI Case Studies</h2>
+            
+            <div class="space-y-12 max-w-6xl mx-auto">
+                <div class="glass-card grid lg:grid-cols-5 reveal" onclick="void(0)">
+                    <div class="lg:col-span-2 p-10 flex flex-col justify-center bg-white border-r border-gray-50">
+                        <h3 class="text-2xl font-800 mb-2 uppercase italic tracking-tighter">JanSahay AI</h3>
+                        <p class="text-[10px] font-bold text-[#22c55e] uppercase tracking-widest mb-6 italic">Grievance NLP Classification</p>
+                        <ul class="space-y-4 text-[#666] text-xs leading-relaxed mb-8">
+                            <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-[#22c55e] shrink-0"></i> Scaled NLP pipeline to handle 1,500+ daily inputs.</li>
+                            <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-[#22c55e] shrink-0"></i> Automated department routing with 94.2% precision.</li>
+                        </ul>
+                        <div class="grid grid-cols-2 gap-3 mb-8">
+                            <img src="adminlog.png" onclick="event.stopPropagation(); openLightbox(this.src)" class="rounded border shadow-sm h-16 object-cover hover:scale-105 transition" alt="Admin Log">
+                            <img src="welfare.png" onclick="event.stopPropagation(); openLightbox(this.src)" class="rounded border shadow-sm h-16 object-cover hover:scale-105 transition" alt="Welfare Prediction">
+                        </div>
+                        <a href="https://github.com/akshatgaur64" target="_blank" class="text-[10px] font-black uppercase tracking-widest text-[#2f6fed] border-b-2 border-[#2f6fed] self-start">Source Code</a>
+                    </div>
+                    <div class="lg:col-span-3 bg-gray-50 flex items-center justify-center p-6">
+                        <img src="dashboard.png" onclick="event.stopPropagation(); openLightbox(this.src)" class="rounded-xl shadow-2xl border border-white" alt="Dashboard Main">
                     </div>
                 </div>
 
                 <div class="glass-card grid lg:grid-cols-5 reveal">
-                    <div class="lg:col-span-3 bg-gray-100 flex items-center justify-center p-6 order-2 lg:order-1">
-                        <img src="home_page.png" class="rounded-xl shadow-2xl border border-white" alt="Weather Visual">
+                    <div class="lg:col-span-3 bg-gray-50 flex items-center justify-center p-6 order-2 lg:order-1">
+                        <img src="home_page.png" onclick="event.stopPropagation(); openLightbox(this.src)" class="rounded-xl shadow-2xl border border-white" alt="Weather UI">
                     </div>
                     <div class="lg:col-span-2 p-10 flex flex-col justify-center bg-white border-l border-gray-50 order-1 lg:order-2">
                         <h3 class="text-2xl font-800 mb-2 uppercase italic tracking-tighter">Weather Engine</h3>
-                        <p class="text-[10px] font-bold text-[#22c55e] uppercase tracking-widest mb-6 italic">Predictive Analytics</p>
-                        <p class="text-[#666] text-xs leading-relaxed italic mb-8">
-                            Real-time Django application utilizing historical datasets and ML regression to deliver visual dashboards.
-                        </p>
-                        <img src="prediction_trend.png" class="rounded-lg border shadow-sm mb-6" alt="Trend">
+                        <p class="text-[10px] font-bold text-[#22c55e] uppercase tracking-widest mb-6 italic">Meteorological Analytics</p>
+                        <p class="text-[#666] text-xs leading-relaxed italic mb-8 italic">Django-powered analytics delivering predictive meteorological dashboards.</p>
+                        <img src="prediction_trend.png" onclick="event.stopPropagation(); openLightbox(this.src)" class="rounded-lg border shadow-sm mb-6" alt="Prediction Graph">
                         <div class="flex flex-wrap gap-2">
                             <span class="px-3 py-1 bg-gray-50 text-[10px] font-bold rounded-full uppercase">Django</span>
-                            <span class="px-3 py-1 bg-gray-50 text-[10px] font-bold rounded-full uppercase">Regressions</span>
+                            <span class="px-3 py-1 bg-gray-50 text-[10px] font-bold rounded-full uppercase">Regression</span>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="verification" class="py-32 px-8 md:px-20 bg-white">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-800 mb-4 uppercase tracking-tighter italic">Data Integrity & Audit Proof</h2>
-                <p class="text-[#666] max-w-xl mx-auto font-medium">Visual verification of data operations handled at the SDM Office Chittorgarh.</p>
-            </div>
-            
-            <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-                <div class="glass-card p-4 reveal">
-                    <p class="text-[9px] font-black text-gray-400 uppercase tracking-widest mb-3">Audit Logs</p>
-                    <img src="adminlog.png" class="rounded-lg border shadow-sm w-full h-40 object-cover" alt="Log">
-                </div>
-                <div class="glass-card p-4 reveal">
-                    <p class="text-[9px] font-black text-gray-400 uppercase tracking-widest mb-3">Reconciled Datasets</p>
-                    <img src="welfare.png" class="rounded-lg border shadow-sm w-full h-40 object-cover" alt="Data">
-                </div>
-                <div class="glass-card p-4 reveal">
-                    <p class="text-[9px] font-black text-gray-400 uppercase tracking-widest mb-3">Govt Database Record</p>
-                    <img src="Table of government records.png" class="rounded-lg border shadow-sm w-full h-40 object-cover" alt="Table">
-                </div>
-                <div class="glass-card md:col-span-2 p-6 reveal">
-                    <p class="text-[9px] font-black text-gray-400 uppercase tracking-widest mb-3">Full Informatics Analytics Dashboard</p>
-                    <img src="internship_dashboard.png" class="rounded-lg border shadow-sm w-full h-64 object-cover" alt="Internship Dashboard">
-                </div>
-                <div class="glass-card p-6 bg-emerald-50 border-emerald-100 flex flex-col justify-center items-center text-center reveal">
-                    <i data-lucide="award" class="w-12 h-12 text-[#22c55e] mb-4"></i>
-                    <h4 class="font-bold text-sm uppercase italic tracking-tighter">SDM Recognized Impact</h4>
-                    <p class="text-[10px] text-gray-500 mb-6 italic leading-relaxed">Improved statewide database reconciliation efficiency by 40%.</p>
-                    <a href="internship_certificate.pdf" target="_blank" class="bg-[#22c55e] text-white px-6 py-2 rounded-lg font-black text-[9px] uppercase tracking-widest shadow-md">View Letter of Appreciation ↗</a>
                 </div>
             </div>
         </section>
@@ -157,33 +164,31 @@
                 <div>
                     <h4 class="text-[10px] font-black uppercase tracking-[0.3em] text-[#2f6fed] mb-6 italic">Languages</h4>
                     <ul class="space-y-3 text-xs font-semibold uppercase italic">
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#22c55e]"></i> Python</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#22c55e]"></i> SQL</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#22c55e]"></i> JavaScript</li>
+                        <li class="flex items-center gap-2 font-black"><i data-lucide="check" class="w-4 h-4 text-[#22c55e]"></i> Python</li>
+                        <li class="flex items-center gap-2 font-black"><i data-lucide="check" class="w-4 h-4 text-[#22c55e]"></i> SQL</li>
+                        <li class="flex items-center gap-2 font-black"><i data-lucide="check" class="w-4 h-4 text-[#22c55e]"></i> JavaScript</li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="text-[10px] font-black uppercase tracking-[0.3em] text-[#2f6fed] mb-6 italic">ML Core</h4>
                     <ul class="space-y-3 text-xs font-semibold uppercase italic">
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#22c55e]"></i> NLP</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#22c55e]"></i> TensorFlow</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#22c55e]"></i> Scikit-learn</li>
+                        <li class="flex items-center gap-2 font-black"><i data-lucide="check" class="w-4 h-4 text-[#22c55e]"></i> NLP</li>
+                        <li class="flex items-center gap-2 font-black"><i data-lucide="check" class="w-4 h-4 text-[#22c55e]"></i> TensorFlow</li>
+                        <li class="flex items-center gap-2 font-black"><i data-lucide="check" class="w-4 h-4 text-[#22c55e]"></i> Scikit-learn</li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="text-[10px] font-black uppercase tracking-[0.3em] text-[#2f6fed] mb-6 italic">Backend</h4>
                     <ul class="space-y-3 text-xs font-semibold uppercase italic">
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#22c55e]"></i> Django</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#22c55e]"></i> REST APIs</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#22c55e]"></i> Flask</li>
+                        <li class="flex items-center gap-2 font-black"><i data-lucide="check" class="w-4 h-4 text-[#22c55e]"></i> Django</li>
+                        <li class="flex items-center gap-2 font-black"><i data-lucide="check" class="w-4 h-4 text-[#22c55e]"></i> REST APIs</li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="text-[10px] font-black uppercase tracking-[0.3em] text-[#2f6fed] mb-6 italic">Data</h4>
                     <ul class="space-y-3 text-xs font-semibold uppercase italic">
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#22c55e]"></i> Power BI</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#22c55e]"></i> Excel</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#22c55e]"></i> Pandas</li>
+                        <li class="flex items-center gap-2 font-black"><i data-lucide="check" class="w-4 h-4 text-[#22c55e]"></i> Power BI</li>
+                        <li class="flex items-center gap-2 font-black"><i data-lucide="check" class="w-4 h-4 text-[#22c55e]"></i> Excel</li>
                     </ul>
                 </div>
             </div>
@@ -191,24 +196,35 @@
 
         <footer class="py-32 px-8 md:px-20 text-center bg-white border-t border-gray-100">
             <h2 class="text-4xl font-800 mb-6 uppercase italic tracking-tighter">Open for Opportunities</h2>
-            <div class="flex justify-center gap-10 mb-20 text-[10px] font-black uppercase tracking-widest opacity-40 italic">
-                <a href="mailto:akshatgaur44@gmail.com" class="hover:text-[#2f6fed] transition">Email</a>
-                <a href="https://linkedin.com/in/akshat-gaur-b608ba2a9" target="_blank" class="hover:text-[#2f6fed] transition">LinkedIn</a>
-                <a href="https://github.com/akshatgaur64" target="_blank" class="hover:text-[#2f6fed] transition">GitHub</a>
+            <p class="text-[#666] font-medium mb-12 italic">I am open to technical collaborations and AI/ML internships.</p>
+            <div class="flex flex-col md:flex-row justify-center gap-10 mb-20">
+                <a href="mailto:akshatgaur44@gmail.com" class="flex items-center gap-3 font-800 text-[11px] uppercase tracking-widest text-[#2f6fed] hover:scale-105 transition"><i data-lucide="mail"></i> akshatgaur44@gmail.com</a>
+                <a href="https://linkedin.com/in/akshat-gaur-b608ba2a9" target="_blank" class="flex items-center gap-3 font-800 text-[11px] uppercase tracking-widest text-[#2f6fed] hover:scale-105 transition"><i data-lucide="linkedin"></i> LinkedIn</a>
+                <a href="https://github.com/akshatgaur64" target="_blank" class="flex items-center gap-3 font-800 text-[11px] uppercase tracking-widest text-[#2f6fed] hover:scale-105 transition"><i data-lucide="github"></i> GitHub</a>
             </div>
-            <p class="text-[9px] font-black uppercase tracking-[1em] text-gray-200">Akshat Gaur • Senior Analytics Portfolio • 2026</p>
+            <p class="text-[9px] font-black uppercase tracking-[1em] text-gray-200">Akshat Gaur • Finalized Production Version • 2026</p>
         </footer>
 
     </main>
 
     <script>
         lucide.createIcons();
+
+        // Reveal Logic
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) entry.target.classList.add('active');
             });
         }, { threshold: 0.1 });
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Lightbox Logic
+        function openLightbox(src) {
+            const lb = document.getElementById('lightbox');
+            const lbImg = document.getElementById('lightbox-img');
+            lbImg.src = src;
+            lb.style.display = 'flex';
+        }
     </script>
 </body>
 </html>
