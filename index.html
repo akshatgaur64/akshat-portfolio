@@ -1,250 +1,266 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Akshat Gaur | Portfolio</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-<style>
-
-/* RESET */
-
-*{margin:0;padding:0;box-sizing:border-box;font-family:Inter,sans-serif}
-
-body{
-display:flex;
-background:#f4f6f9;
-color:#111;
-}
-
-/* SIDEBAR */
-
-.sidebar{
-width:260px;
-background:linear-gradient(180deg,#2f6fed,#22c55e);
-color:white;
-min-height:100vh;
-padding:30px 20px;
-position:fixed;
-}
-
-.sidebar img{
-width:110px;
-height:110px;
-border-radius:50%;
-object-fit:cover;
-margin-bottom:15px;
-}
-
-.sidebar h2{margin-bottom:5px}
-.sidebar p{font-size:13px;margin-bottom:20px}
-
-.sidebar a{
-display:block;
-color:white;
-text-decoration:none;
-padding:10px 0;
-font-size:14px;
-}
-
-.sidebar a:hover{opacity:.8}
-
-/* MAIN */
-
-.main{
-margin-left:260px;
-width:100%;
-}
-
-/* HERO */
-
-.hero{
-background:white;
-padding:60px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
-
-.hero h1{font-size:40px}
-.hero h2{color:#2f6fed;margin-bottom:10px}
-
-.hero p{color:#555;max-width:500px}
-
-.btn{
-padding:10px 16px;
-border-radius:6px;
-text-decoration:none;
-margin-right:10px;
-font-size:14px;
-}
-
-.primary{
-background:#22c55e;
-color:white;
-}
-
-.secondary{
-border:1px solid #444;
-color:#444;
-}
-
-/* SECTION */
-
-.section{
-padding:50px 60px;
-}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:25px;
-}
-
-.card{
-background:white;
-padding:22px;
-border-radius:10px;
-box-shadow:0 3px 10px rgba(0,0,0,.05);
-}
-
-/* PROJECT */
-
-.project img{
-width:100%;
-height:180px;
-object-fit:cover;
-border-radius:8px;
-margin-bottom:10px;
-}
-
-</style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akshat Gaur | AI & ML Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --sidebar-grad: linear-gradient(180deg, #2f6fed 0%, #22c55e 100%);
+            --bg: #f4f6f9;
+            --accent: #2f6fed;
+            --primary-btn: #22c55e;
+        }
+        body { font-family: 'Inter', sans-serif; background-color: var(--bg); color: #111; scroll-behavior: smooth; }
+        
+        /* Sidebar Styling */
+        .sidebar { background: var(--sidebar-grad); }
+        .nav-link { transition: all 0.3s ease; border-radius: 8px; color: rgba(255,255,255,0.7); font-weight: 500; }
+        .nav-link:hover, .nav-link.active { background: rgba(255,255,255,0.15); color: #ffffff; }
+        
+        /* Main Content Styling */
+        .glass-card { background: #ffffff; border-radius: 12px; border: 1px solid #e2e8f0; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        .glass-card:hover { transform: translateY(-5px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05); }
+        
+        .btn-green { background-color: var(--primary-btn); transition: filter 0.2s; }
+        .btn-green:hover { filter: brightness(1.1); }
+        .reveal { opacity: 0; transform: translateY(20px); transition: all 0.6s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        
+        @media (max-width: 768px) { .sidebar { position: relative; height: auto; width: 100%; } .main-content { margin-left: 0 !important; } }
+    </style>
 </head>
+<body class="flex flex-col md:flex-row min-h-screen">
 
-<body>
+    <aside class="sidebar w-full md:w-80 md:fixed h-full z-50 flex flex-col p-8 text-white shadow-2xl">
+        <div class="text-center mb-8">
+            <img src="akshat_profile.png" alt="Akshat Gaur" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-white/20 object-cover bg-white/10">
+            <h1 class="text-xl font-800 tracking-tight">Akshat Gaur</h1>
+            <p class="text-xs font-medium text-white/70 uppercase tracking-widest mt-1">AI & ML Engineer</p>
+        </div>
 
-<!-- SIDEBAR -->
+        <p class="text-xs text-center text-white/80 leading-relaxed mb-8 font-medium italic">
+            "I build intelligent systems using Machine Learning, NLP, and predictive analytics. Focused on solving real-world governance and automation problems."
+        </p>
 
-<div class="sidebar">
+        <div class="flex justify-center gap-5 mb-10 text-white/60">
+            <a href="https://github.com/akshatgaur64" target="_blank" class="hover:text-white transition"><i data-lucide="github" class="w-5 h-5"></i></a>
+            <a href="https://linkedin.com/in/akshat-gaur-b608ba2a9" target="_blank" class="hover:text-white transition"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+            <a href="mailto:akshatgaur44@gmail.com" class="hover:text-white transition"><i data-lucide="mail" class="w-5 h-5"></i></a>
+        </div>
 
-<img src="./akshat_profile.png">
+        <nav class="flex-grow space-y-1 mb-10">
+            <a href="#about" class="nav-link flex items-center gap-4 p-3 text-sm"><i data-lucide="user" class="w-4 h-4"></i> About Me</a>
+            <a href="#portfolio" class="nav-link flex items-center gap-4 p-3 text-sm"><i data-lucide="layout-grid" class="w-4 h-4"></i> Portfolio</a>
+            <a href="#skills" class="nav-link flex items-center gap-4 p-3 text-sm"><i data-lucide="cpu" class="w-4 h-4"></i> Skills</a>
+            <a href="#experience" class="nav-link flex items-center gap-4 p-3 text-sm"><i data-lucide="award" class="w-4 h-4"></i> Experience</a>
+        </nav>
 
-<h2>Akshat Gaur</h2>
-<p>AI & Machine Learning Developer</p>
+        <a href="Akshat_Gaur_Resume.pdf" target="_blank" class="w-full bg-white text-[#2f6fed] py-3 rounded-lg font-bold text-center text-xs uppercase tracking-widest shadow-lg hover:bg-gray-50 transition">
+            Download Resume
+        </a>
+    </aside>
 
-<a href="#about">About Me</a>
-<a href="#projects">Projects</a>
-<a href="#skills">Skills</a>
-<a href="#contact">Contact</a>
+    <main class="main-content flex-1 md:ml-80">
+        
+        <section id="about" class="min-h-screen flex items-center px-8 md:px-20 py-20 bg-white">
+            <div class="grid md:grid-cols-2 gap-16 items-center w-full">
+                <div class="reveal active">
+                    <span class="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-2 block">Hello, my name is</span>
+                    <h2 class="text-6xl font-800 tracking-tighter mb-4">Akshat Gaur</h2>
+                    <p class="text-[#2f6fed] font-bold text-xl mb-8">AI & Machine Learning Engineer</p>
+                    <p class="text-[#666] text-lg leading-relaxed mb-10 max-w-lg">
+                        I am a final-year Computer Science student focused on building scalable AI systems using machine learning, NLP, and predictive analytics. My work centers on solving governance and real-world automation challenges.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#portfolio" class="btn-green text-white px-8 py-4 rounded-lg font-bold text-xs uppercase tracking-widest shadow-xl">View Portfolio</a>
+                        <a href="Akshat_Gaur_Resume.pdf" target="_blank" class="border-2 border-gray-200 text-gray-800 px-8 py-4 rounded-lg font-bold text-xs uppercase tracking-widest hover:bg-gray-50 transition">View Resume</a>
+                    </div>
+                </div>
+                <div class="hidden md:block reveal active">
+                    <div class="relative">
+                        <img src="dashboard.png" class="rounded-2xl shadow-2xl border border-gray-100 transform -rotate-2 hover:rotate-0 transition duration-500" alt="Project Preview">
+                        <div class="absolute -bottom-6 -right-6 bg-white p-4 rounded-xl shadow-lg border border-gray-100">
+                            <p class="text-[10px] font-black uppercase text-[#2f6fed] tracking-tighter italic">94.2% AI Accuracy</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<br>
+        <section class="py-24 px-8 md:px-20">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-800 mb-4 uppercase tracking-tighter italic">What I Do</h2>
+                <p class="text-[#666] max-w-xl mx-auto font-medium">I specialize in building intelligent AI-driven systems and scalable automation workflows.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="glass-card p-8 reveal">
+                    <i data-lucide="brain" class="text-[#2f6fed] w-8 h-8 mb-6"></i>
+                    <h3 class="font-bold mb-3">AI Systems Engineering</h3>
+                    <p class="text-xs text-[#666] leading-relaxed">ML pipelines, NLP models, and production-grade predictive analytics.</p>
+                </div>
+                <div class="glass-card p-8 reveal">
+                    <i data-lucide="bar-chart-3" class="text-[#2f6fed] w-8 h-8 mb-6"></i>
+                    <h3 class="font-bold mb-3">Data Analytics</h3>
+                    <p class="text-xs text-[#666] leading-relaxed">Enterprise dashboards, automated reporting, and reconciliation workflows.</p>
+                </div>
+                <div class="glass-card p-8 reveal">
+                    <i data-lucide="database" class="text-[#2f6fed] w-8 h-8 mb-6"></i>
+                    <h3 class="font-bold mb-3">Backend Development</h3>
+                    <p class="text-xs text-[#666] leading-relaxed">Scalable APIs and data-driven systems using Django and Python.</p>
+                </div>
+                <div class="glass-card p-8 reveal">
+                    <i data-lucide="message-square" class="text-[#2f6fed] w-8 h-8 mb-6"></i>
+                    <h3 class="font-bold mb-3">NLP Applications</h3>
+                    <p class="text-xs text-[#666] leading-relaxed">Text classification, large-scale sentiment analysis, and language models.</p>
+                </div>
+                <div class="glass-card p-8 reveal">
+                    <i data-lucide="settings" class="text-[#2f6fed] w-8 h-8 mb-6"></i>
+                    <h3 class="font-bold mb-3">Automation Tools</h3>
+                    <p class="text-xs text-[#666] leading-relaxed">Workflow optimization and scripting for administrative efficiency.</p>
+                </div>
+                <div class="glass-card p-8 reveal">
+                    <i data-lucide="rocket" class="text-[#2f6fed] w-8 h-8 mb-6"></i>
+                    <h3 class="font-bold mb-3">Model Deployment</h3>
+                    <p class="text-xs text-[#666] leading-relaxed">Transitioning research models into production-ready software.</p>
+                </div>
+            </div>
+        </section>
 
-<a href="./Akshat_Gaur_Resume.pdf" class="btn primary">Download Resume</a>
+        <section id="portfolio" class="py-24 px-8 md:px-20 bg-gray-50/50 border-y border-gray-100">
+            <h2 class="text-3xl font-800 mb-16 uppercase tracking-tighter italic">Featured Projects</h2>
+            <div class="space-y-16">
+                <div class="glass-card overflow-hidden grid lg:grid-cols-2 gap-0 reveal">
+                    <div class="p-10 flex flex-col justify-center">
+                        <h3 class="text-2xl font-800 mb-2 uppercase italic tracking-tighter">JanSahay AI</h3>
+                        <p class="text-xs font-bold text-[#22c55e] uppercase tracking-widest mb-6">NLP & Governance Platform</p>
+                        <p class="text-[#666] text-sm leading-relaxed mb-8">
+                            AI governance platform for grievance classification and welfare scheme prediction using NLP and machine learning.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-8">
+                            <span class="px-3 py-1 bg-gray-100 text-[10px] font-bold rounded-full">Python</span>
+                            <span class="px-3 py-1 bg-gray-100 text-[10px] font-bold rounded-full">NLP</span>
+                            <span class="px-3 py-1 bg-gray-100 text-[10px] font-bold rounded-full">Scikit-learn</span>
+                        </div>
+                        <div class="flex gap-4">
+                            <a href="#" class="text-xs font-black uppercase tracking-widest text-[#2f6fed] border-b-2 border-[#2f6fed]">GitHub</a>
+                            <a href="#" class="text-xs font-black uppercase tracking-widest text-gray-400">Case Study</a>
+                        </div>
+                    </div>
+                    <img src="dashboard.png" class="w-full h-full object-cover border-l border-gray-100" alt="JanSahay">
+                </div>
 
-</div>
+                <div class="glass-card overflow-hidden grid lg:grid-cols-2 gap-0 reveal">
+                    <img src="home_page.png" class="w-full h-full object-cover border-r border-gray-100 lg:order-1 order-2" alt="Weather">
+                    <div class="p-10 flex flex-col justify-center lg:order-2 order-1">
+                        <h3 class="text-2xl font-800 mb-2 uppercase italic tracking-tighter">Weather Analytics Engine</h3>
+                        <p class="text-xs font-bold text-[#22c55e] uppercase tracking-widest mb-6">Predictive Visualization</p>
+                        <p class="text-[#666] text-sm leading-relaxed mb-8">
+                            Predictive analytics dashboard for real-time weather forecasting using ML models and historical data.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-8">
+                            <span class="px-3 py-1 bg-gray-100 text-[10px] font-bold rounded-full">Django</span>
+                            <span class="px-3 py-1 bg-gray-100 text-[10px] font-bold rounded-full">APIs</span>
+                        </div>
+                    </div>
+                </div>
 
-<!-- MAIN -->
+                <div class="glass-card overflow-hidden grid lg:grid-cols-2 gap-0 reveal">
+                    <div class="p-10 flex flex-col justify-center">
+                        <h3 class="text-2xl font-800 mb-2 uppercase italic tracking-tighter">Informatics Audit Dashboard</h3>
+                        <p class="text-xs font-bold text-[#22c55e] uppercase tracking-widest mb-6">Internship Project • SDM Office</p>
+                        <p class="text-[#666] text-sm leading-relaxed mb-8">
+                            Excel-based governance automation improving reporting workflows and efficiency for state database management.
+                        </p>
+                        <div class="flex gap-4">
+                            <a href="internship_certificate.pdf" target="_blank" class="text-xs font-black uppercase tracking-widest text-[#2f6fed] border-b-2 border-[#2f6fed]">Certificate</a>
+                            <a href="internship_dashboard.png" target="_blank" class="text-xs font-black uppercase tracking-widest text-[#2f6fed] border-b-2 border-[#2f6fed]">Preview Dashboard</a>
+                        </div>
+                    </div>
+                    <img src="internship_dashboard.png" class="w-full h-full object-cover border-l border-gray-100" alt="Internship">
+                </div>
+            </div>
+        </section>
 
-<div class="main">
+        <section id="skills" class="py-24 px-8 md:px-20 bg-white">
+            <h2 class="text-3xl font-800 mb-16 uppercase tracking-tighter italic text-center">Technical Skills</h2>
+            <div class="grid md:grid-cols-4 gap-12 reveal">
+                <div>
+                    <h4 class="text-[10px] font-black uppercase tracking-[0.3em] text-[#2f6fed] mb-6">Languages</h4>
+                    <ul class="space-y-3 text-sm font-semibold">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#22c55e]"></i> Python</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#22c55e]"></i> SQL</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#22c55e]"></i> JavaScript</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-[10px] font-black uppercase tracking-[0.3em] text-[#2f6fed] mb-6">Frameworks</h4>
+                    <ul class="space-y-3 text-sm font-semibold">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#22c55e]"></i> TensorFlow</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#22c55e]"></i> PyTorch</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#22c55e]"></i> Django</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-[10px] font-black uppercase tracking-[0.3em] text-[#2f6fed] mb-6">Tools</h4>
+                    <ul class="space-y-3 text-sm font-semibold">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#22c55e]"></i> Git & GitHub</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#22c55e]"></i> Power BI</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#22c55e]"></i> Excel Analytics</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-[10px] font-black uppercase tracking-[0.3em] text-[#2f6fed] mb-6">Domains</h4>
+                    <ul class="space-y-3 text-sm font-semibold">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#22c55e]"></i> Deep Learning</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#22c55e]"></i> NLP</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#22c55e]"></i> Predictive ML</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-<!-- HERO -->
+        <section id="experience" class="py-24 px-8 md:px-20 bg-[#111] text-white">
+            <div class="grid md:grid-cols-3 gap-12 text-center">
+                <div class="reveal">
+                    <p class="text-4xl font-800 text-[#22c55e] mb-2">94.2%</p>
+                    <p class="text-[10px] font-bold uppercase tracking-widest text-white/50">NLP Accuracy</p>
+                </div>
+                <div class="reveal">
+                    <p class="text-4xl font-800 text-[#22c55e] mb-2">10,000+</p>
+                    <p class="text-[10px] font-bold uppercase tracking-widest text-white/50">Records Processed</p>
+                </div>
+                <div class="reveal">
+                    <i data-lucide="shield-check" class="w-10 h-10 text-[#22c55e] mx-auto mb-2"></i>
+                    <p class="text-[10px] font-bold uppercase tracking-widest text-white/50">Internship Certified</p>
+                </div>
+            </div>
+        </section>
 
-<div class="hero" id="about">
+        <footer class="py-32 px-8 md:px-20 text-center bg-white">
+            <h2 class="text-4xl font-800 mb-4 uppercase italic tracking-tighter">Let's Connect</h2>
+            <p class="text-[#666] font-medium mb-12">Open to AI/ML internships, research roles, and collaborations.</p>
+            <div class="flex flex-col md:flex-row justify-center gap-8 mb-20">
+                <a href="mailto:akshatgaur44@gmail.com" class="flex items-center gap-2 font-bold text-xs uppercase tracking-widest hover:text-[#2f6fed] transition"><i data-lucide="mail" class="w-5 h-5"></i> Email</a>
+                <a href="https://linkedin.com/in/akshat-gaur-b608ba2a9" target="_blank" class="flex items-center gap-2 font-bold text-xs uppercase tracking-widest hover:text-[#2f6fed] transition"><i data-lucide="linkedin" class="w-5 h-5"></i> LinkedIn</a>
+                <a href="https://github.com/akshatgaur64" target="_blank" class="flex items-center gap-2 font-bold text-xs uppercase tracking-widest hover:text-[#2f6fed] transition"><i data-lucide="github" class="w-5 h-5"></i> GitHub</a>
+            </div>
+            <p class="text-[9px] font-black uppercase tracking-[1em] text-gray-200">Akshat Gaur • Senior Design Architecture • 2026</p>
+        </footer>
 
-<div>
+    </main>
 
-<h1>Akshat Gaur</h1>
-<h2>AI & Machine Learning Engineer</h2>
-
-<p>
-I build scalable AI systems using Machine Learning, NLP, and Predictive Analytics.  
-Focused on solving real-world governance and automation problems.
-</p><br>
-
-<a href="#projects" class="btn primary">View Portfolio</a>
-<a href="./Akshat_Gaur_Resume.pdf" class="btn secondary">View Resume</a>
-
-</div>
-
-<img src="./home_page.png" style="width:300px;border-radius:8px">
-
-</div>
-
-<!-- WHAT I DO -->
-
-<div class="section">
-
-<h2>What I Do</h2><br>
-
-<div class="grid">
-
-<div class="card">
-<h3>AI Systems</h3>
-Machine learning pipelines, NLP models, predictive analytics workflows.
-</div>
-
-<div class="card">
-<h3>Data Analytics</h3>
-Dashboard development, reporting automation, workflow optimization.
-</div>
-
-<div class="card">
-<h3>Automation</h3>
-Governance workflows, structured data automation, scalable solutions.
-</div>
-
-</div>
-
-</div>
-
-<!-- PROJECTS -->
-
-<div class="section" id="projects">
-
-<h2>Projects</h2><br>
-
-<div class="grid">
-
-<div class="card project">
-<img src="./dashboard.png">
-<h3>JanSahay AI</h3>
-<p>AI governance platform for grievance classification and welfare prediction.</p>
-</div>
-
-<div class="card project">
-<img src="./prediction_trend.png">
-<h3>Weather Analytics</h3>
-<p>Predictive ML dashboard for real-time forecasting.</p>
-</div>
-
-<div class="card project">
-<img src="./internship_dashboard.png">
-<h3>Informatics Dashboard</h3>
-<p>Excel-based automation improving reporting workflows.</p>
-</div>
-
-</div>
-
-</div>
-
-<!-- CONTACT -->
-
-<div class="section" id="contact">
-
-<h2>Contact</h2><br>
-
-<p>Email: akshatgaur44@gmail.com</p>
-<p>GitHub: github.com/akshatgaur64</p>
-<p>LinkedIn: linkedin.com/in/akshat-gaur-b608ba2a9</p>
-
-</div>
-
-</div>
-
+    <script>
+        lucide.createIcons();
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('active');
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
 </body>
 </html>
