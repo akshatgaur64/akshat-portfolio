@@ -5,112 +5,93 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Akshat Gaur | Informatics Analyst & AI Engineer</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #030303; color: #fff; scroll-behavior: smooth; }
-        .bento-card { background: #0a0a0a; border: 1px solid rgba(255,255,255,0.05); border-radius: 2rem; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); overflow: hidden; }
-        .bento-card:hover { border-color: rgba(59, 130, 246, 0.5); transform: translateY(-5px); }
-        .hero-gradient { background: radial-gradient(circle at center, rgba(59, 130, 246, 0.1) 0%, transparent 70%); }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #fafafa; color: #111; scroll-behavior: smooth; }
+        .studio-card { background: #fff; border: 1px solid #eee; border-radius: 1.5rem; transition: all 0.5s ease; overflow: hidden; }
+        .studio-card:hover { border-color: #000; transform: translateY(-10px); box-shadow: 0 40px 80px -20px rgba(0,0,0,0.1); }
+        .text-huge { font-size: clamp(3rem, 8vw, 7rem); line-height: 0.9; letter-spacing: -0.04em; }
+        .nav-glass { background: rgba(250, 250, 250, 0.8); backdrop-filter: blur(20px); }
     </style>
 </head>
-<body class="selection:bg-blue-500/30">
+<body class="antialiased">
 
-    <nav class="fixed top-0 w-full z-50 px-10 py-6 flex justify-between items-center bg-black/40 backdrop-blur-xl border-b border-white/5">
-        <div class="text-xl font-black tracking-tighter uppercase">Akshat Gaur</div>
-        <div class="flex gap-8 text-[10px] font-bold uppercase tracking-widest opacity-60">
-            <a href="public/Akshat_Gaur_Resume.pdf" target="_blank" class="hover:text-blue-500 transition">Resume PDF</a>
-            <a href="mailto:akshatgaur44@gmail.com" class="hover:text-blue-500 transition">Contact</a>
+    <nav class="fixed top-0 w-full z-50 px-8 py-6 flex justify-between items-center nav-glass border-b border-gray-100">
+        <div class="text-lg font-extrabold tracking-tighter">AKSHAT GAUR</div>
+        <div class="flex gap-10 text-[10px] font-bold uppercase tracking-[0.2em]">
+            <a href="public/Akshat_Gaur_Resume.pdf" target="_blank" class="hover:text-blue-600 transition">Resume</a>
+            <a href="mailto:akshatgaur44@gmail.com" class="hover:text-blue-600 transition">Contact</a>
         </div>
     </nav>
 
-    <section class="relative pt-48 pb-20 px-10 max-w-7xl mx-auto hero-gradient">
-        <div class="text-blue-500 font-bold text-xs uppercase tracking-[0.4em] mb-8">Informatics Analyst • Govt of Rajasthan</div>
-        <h1 class="text-6xl md:text-9xl font-black tracking-tighter leading-none mb-10">STRATEGY<br/><span class="text-neutral-800 tracking-normal italic font-normal">MEETS</span> DATA.</h1>
-        <p class="max-w-2xl text-neutral-400 text-lg md:text-2xl font-medium leading-relaxed mb-12">
-            B.Tech CSE @ BTU. Engineered automated governance systems and predictive AI for statewide public initiatives. 
-            Validated <span class="text-white font-bold">10,000+ records</span> with a <span class="text-white font-bold">40% efficiency gain</span>.
+    <section class="min-h-screen pt-40 pb-20 px-8 md:px-20 flex flex-col justify-center">
+        <div class="inline-block px-4 py-1.5 border border-black/10 rounded-full text-[10px] font-bold uppercase tracking-widest mb-10">
+            Informatics Analyst • Govt of Rajasthan
+        </div>
+        <h1 class="text-huge font-extrabold mb-12">
+            Informatics <span class="text-gray-300">Analyst</span><br/>Based in India.
+        </h1>
+        <p class="max-w-2xl text-gray-500 text-lg md:text-2xl font-light leading-relaxed mb-16">
+            I engineer automated governance systems and predictive AI for statewide public initiatives. 
+            Validated <span class="text-black font-bold">10,000+ records</span> with a <span class="text-black font-bold">40% efficiency gain</span>.
         </p>
-    </section>
-
-    <section class="px-10 py-10 max-w-7xl mx-auto">
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
-            <div class="md:col-span-8 bento-card p-10 flex flex-col justify-between">
-                <div>
-                    <h3 class="text-blue-500 font-bold text-xs uppercase tracking-widest mb-4">Case Study 01</h3>
-                    <h2 class="text-4xl font-black mb-6">JanSahay: AI Intelligence</h2>
-                    <p class="text-neutral-500 text-lg mb-8 max-w-xl leading-relaxed">
-                        An NLP-driven portal achieving 94.2% AI accuracy in classifying public grievances. 
-                        Integrated Random Forest models for automated routing across departments.
-                    </p>
-                </div>
-                <img src="public/dashboard.png" class="rounded-2xl border border-white/5 shadow-2xl hover:scale-105 transition duration-700" alt="Dashboard">
-            </div>
-            
-            <div class="md:col-span-4 bento-card p-8 flex flex-col justify-center items-center text-center">
-                <div class="text-6xl font-black text-blue-500 mb-2">94.2%</div>
-                <div class="text-xs font-bold uppercase tracking-widest opacity-50">AI Accuracy Rate</div>
-            </div>
-
-            <div class="md:col-span-4 bento-card h-64">
-                <img src="public/adminlog.png" class="h-full w-full object-cover opacity-60 hover:opacity-100 transition" alt="Logs">
-            </div>
-            <div class="md:col-span-4 bento-card h-64">
-                <img src="public/welfare.png" class="h-full w-full object-cover opacity-60 hover:opacity-100 transition" alt="Welfare">
-            </div>
-            <div class="md:col-span-4 bento-card h-64">
-                <img src="public/form.png" class="h-full w-full object-cover opacity-60 hover:opacity-100 transition" alt="Form">
-            </div>
+        <div class="flex gap-4">
+            <a href="#work" class="bg-black text-white px-10 py-5 rounded-full font-bold text-sm uppercase tracking-widest hover:bg-gray-800 transition">View My Work</a>
         </div>
     </section>
 
-    <section class="px-10 py-10 max-w-7xl mx-auto">
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
-            <div class="md:col-span-4 bento-card p-8 flex flex-col justify-center items-center text-center bg-blue-600">
-                <div class="text-6xl font-black text-white mb-2">10,000+</div>
-                <div class="text-xs font-bold uppercase tracking-widest text-blue-200">Records Audited</div>
-                <p class="text-xs mt-4 opacity-70">Statewide Verification</p>
+    <section id="work" class="px-8 md:px-20 py-40 bg-white border-y border-gray-100">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-10">
+            <h2 class="text-5xl font-extrabold tracking-tighter italic text-gray-200">Selected<br/><span class="text-black not-italic">Portfolios</span></h2>
+            <p class="max-w-xs text-xs text-gray-400 font-medium leading-loose uppercase tracking-widest">
+                Showcasing 94.2% AI Accuracy & Large Scale Data Audits for High-Impact Governance.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <div class="studio-card group">
+                <div class="p-10">
+                    <div class="text-[10px] font-black uppercase text-blue-600 tracking-widest mb-4">Case Study 01</div>
+                    <h3 class="text-3xl font-extrabold mb-4">JanSahay: AI Intelligence</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-8">An NLP-driven portal for automated grievance classification across public departments.</p>
+                </div>
+                <div class="px-10 pb-10">
+                    <img src="public/dashboard.png" class="w-full h-80 object-cover rounded-xl border border-gray-50 group-hover:scale-[1.02] transition duration-700" />
+                </div>
             </div>
-            <div class="md:col-span-8 bento-card p-10 bg-neutral-900/50">
-                <h3 class="text-blue-500 font-bold text-xs uppercase tracking-widest mb-4">Informatics Audit</h3>
-                <h2 class="text-4xl font-black mb-6 uppercase italic tracking-tighter">Data Integrity</h2>
-                <p class="text-neutral-500 text-lg mb-8 leading-relaxed">
-                    Managed statewide citizen data reconciliation for the SDM Office. Automated verification workflows using Python and SQL, 
-                    reducing reporting cycles by 40%.
-                </p>
-                <div class="grid grid-cols-2 gap-4">
-                    <img src="public/Internship_work_dashboard.png" class="rounded-xl border border-white/5 shadow-lg" alt="Work">
-                    <img src="public/Table_of_government_records.png" class="rounded-xl border border-white/5 shadow-lg" alt="Records">
+
+            <div class="studio-card group">
+                <div class="p-10">
+                    <div class="text-[10px] font-black uppercase text-orange-500 tracking-widest mb-4">Case Study 02</div>
+                    <h3 class="text-3xl font-extrabold mb-4">Weather Forecast Engine</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-8">High-fidelity meteorological dashboard utilizing Random Forest Regressors.</p>
+                </div>
+                <div class="px-10 pb-10">
+                    <img src="public/home_page.png" class="w-full h-80 object-cover rounded-xl border border-gray-50 group-hover:scale-[1.02] transition duration-700" />
+                </div>
+            </div>
+
+            <div class="studio-card group md:col-span-2 flex flex-col md:flex-row items-center">
+                <div class="p-10 md:w-1/2">
+                    <div class="text-[10px] font-black uppercase text-gray-400 tracking-widest mb-4">10k+ Records Audited</div>
+                    <h3 class="text-4xl font-extrabold mb-6 italic tracking-tighter">Statewide Data Integrity</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-8">Automated verification workflows reducing reporting cycles by 40% for the SDM Office.</p>
+                    <a href="public/internship_certificate.pdf" target="_blank" class="inline-block border-b-2 border-black pb-1 text-[10px] font-black uppercase tracking-widest">Verify Certificate</a>
+                </div>
+                <div class="p-10 md:w-1/2">
+                    <img src="public/Table_of_government_records.png" class="w-full rounded-xl border border-gray-50 shadow-sm" />
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="px-10 py-10 max-w-7xl mx-auto pb-40">
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
-             <div class="md:col-span-5 bento-card h-full">
-                <img src="public/home_page.png" class="h-full w-full object-cover" alt="Weather App">
-            </div>
-            <div class="md:col-span-7 bento-card p-10 border-orange-500/20">
-                <h3 class="text-orange-500 font-bold text-xs uppercase tracking-widest mb-4">Predictive Analytics</h3>
-                <h2 class="text-4xl font-black mb-6">Weather Forecast Engine</h2>
-                <p class="text-neutral-500 text-lg mb-8 leading-relaxed">
-                    A high-fidelity meteorological dashboard built on Django. Utilizes Random Forest Regressors to predict temperature trends with local atmospheric data.
-                </p>
-                <img src="public/prediction_trend.png" class="rounded-xl border border-white/5" alt="Trends">
-            </div>
-        </div>
-    </section>
-
-    <footer class="py-40 text-center border-t border-white/5 bg-neutral-950/50">
-        <a href="public/internship_certificate.pdf" target="_blank" class="text-3xl md:text-5xl font-black hover:text-blue-500 transition border-b-2 border-white pb-4 mb-20 inline-block tracking-tighter">
-            Verify SDM Certificate
-        </a>
-        <div class="flex flex-col md:flex-row justify-between items-center px-10 text-[10px] font-bold uppercase tracking-[0.4em] text-neutral-600 gap-8">
-            <div>akshatgaur44@gmail.com</div>
-            <div class="flex gap-10">
-                <a href="https://linkedin.com/in/akshat-gaur" class="hover:text-white transition">LinkedIn</a>
-                <a href="https://github.com/akshatgaur64" class="hover:text-white transition">GitHub</a>
-            </div>
+    <footer class="py-40 px-8 md:px-20 text-center">
+        <h2 class="text-huge font-extrabold mb-10">Let's <span class="text-gray-200">Connect</span>.</h2>
+        <p class="text-gray-400 mb-20 font-medium">akshatgaur44@gmail.com • +91-8690630121</p>
+        
+        <div class="flex justify-center gap-12 text-[10px] font-black uppercase tracking-widest text-gray-300">
+            <a href="https://linkedin.com/in/akshat-gaur" class="hover:text-black transition">LinkedIn</a>
+            <a href="https://github.com/akshatgaur64" class="hover:text-black transition">GitHub</a>
         </div>
     </footer>
 
