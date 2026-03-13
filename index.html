@@ -6,14 +6,14 @@
     <title>Akshat Gaur | AI & ML Developer</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #0f1115;
-            --card: #161a21;
             --primary: #0f5132;
             --accent: #34d399;
-            --text-sec: #b7c0cc;
+            --bg: #0f1115;
+            --card: #161a21;
+            --text-sec: #c0cad6;
         }
         body { 
             font-family: 'Inter', sans-serif; 
@@ -21,207 +21,200 @@
             color: white; 
             scroll-behavior: smooth;
         }
-        .glass-card {
-            background: var(--card);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(12px);
-            border-radius: 16px;
+        .section-spacing { padding-top: 110px; padding-bottom: 110px; }
+        .glass-card { 
+            background: var(--card); 
+            border: 1px solid rgba(255, 255, 255, 0.05); 
+            border-radius: 16px; 
+            padding: 28px;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        .glass-card:hover {
-            transform: translateY(-8px);
-            border-color: rgba(52, 211, 153, 0.3);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        .glass-card:hover { 
+            transform: translateY(-5px); 
+            border-color: var(--accent);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
         }
-        .text-secondary { color: var(--text-sec); }
-        .accent-text { color: var(--accent); }
-        .btn-primary { background-color: var(--primary); border: 1px solid var(--accent); }
-        .btn-secondary { border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.03); }
-        
-        /* Animations */
-        .reveal { opacity: 0; transform: translateY(20px); transition: all 0.8s ease-out; }
+        .text-huge { font-size: 48px; line-height: 1.1; font-weight: 800; }
+        .text-section { font-size: 32px; font-weight: 700; }
+        .reveal { opacity: 0; transform: translateY(20px); transition: all 0.6s ease-out; }
         .reveal.active { opacity: 1; transform: translateY(0); }
+        .btn-primary { background: var(--primary); border: 1px solid var(--accent); }
     </style>
 </head>
 <body class="antialiased">
 
-    <header class="min-h-screen flex flex-col justify-center px-6 md:px-20 max-w-7xl mx-auto">
-        <div class="grid md:grid-cols-2 gap-16 items-center">
+    <nav class="fixed top-0 w-full z-50 px-6 py-6 flex justify-between items-center bg-[#0f1115]/80 backdrop-blur-md border-b border-white/5">
+        <div class="text-sm font-bold tracking-widest uppercase">Akshat Gaur</div>
+        <div class="hidden md:flex gap-10 text-[11px] font-bold uppercase tracking-widest text-[#c0cad6]">
+            <a href="#experience" class="hover:text-[#34d399] transition">Experience</a>
+            <a href="#projects" class="hover:text-[#34d399] transition">Work</a>
+            <a href="#skills" class="hover:text-[#34d399] transition">Expertise</a>
+            <a href="mailto:akshatgaur44@gmail.com" class="text-[#34d399]">Contact</a>
+        </div>
+    </nav>
+
+    <section class="min-h-screen flex items-center px-6 md:px-20 max-w-7xl mx-auto pt-20">
+        <div class="grid md:grid-cols-2 gap-16 items-center w-full">
             <div class="reveal active">
-                <div class="flex items-center gap-6 mb-10">
-                    <img src="./public/akshat_profile.png" alt="Akshat Gaur" class="w-24 h-24 rounded-full border-2 border-[#34d399] p-1 object-cover">
-                    <div>
-                        <h1 class="text-5xl font-bold tracking-tighter mb-1 uppercase">Akshat Gaur</h1>
-                        <p class="accent-text font-semibold tracking-widest text-sm uppercase">AI & Machine Learning Developer</p>
-                    </div>
+                <div class="flex items-center gap-4 mb-6">
+                    <img src="./public/akshat_profile.png" alt="Akshat Gaur" class="w-16 h-16 rounded-full border-2 border-[#34d399] p-1 object-cover grayscale">
+                    <span class="text-xs font-bold tracking-[0.3em] text-[#c0cad6] uppercase">Hello, my name is</span>
                 </div>
-                <p class="text-xl text-secondary leading-relaxed mb-10 max-w-lg">
-                    Building real-world intelligent systems using Machine Learning, NLP, and Deep Learning with focus on scalable and impactful solutions.
+                <h1 class="text-huge mb-4 tracking-tighter uppercase">Akshat Gaur</h1>
+                <p class="text-[#34d399] font-bold text-lg mb-8 uppercase tracking-widest">AI & Machine Learning Developer</p>
+                <p class="text-[#c0cad6] text-lg leading-relaxed mb-10 max-w-lg">
+                    I design and build scalable AI systems using Machine Learning, NLP, and predictive analytics. My work focuses on solving real-world problems through intelligent automation and data-driven decision systems.
                 </p>
                 <div class="flex gap-5">
-                    <a href="#projects" class="btn-primary px-8 py-4 rounded-xl font-bold text-sm transition-all hover:brightness-125">View Projects</a>
-                    <a href="./public/Akshat_Gaur_Resume.pdf" target="_blank" class="btn-secondary px-8 py-4 rounded-xl font-bold text-sm transition-all hover:bg-white/10">Download Resume</a>
+                    <a href="#projects" class="btn-primary px-8 py-4 rounded-lg font-bold text-xs uppercase tracking-widest transition hover:brightness-110">View Projects</a>
+                    <a href="./public/Akshat_Gaur_Resume.pdf" target="_blank" class="border border-white/10 px-8 py-4 rounded-lg font-bold text-xs uppercase tracking-widest hover:bg-white/5 transition">Download Resume</a>
                 </div>
             </div>
 
             <div class="grid grid-cols-2 gap-4 reveal active">
-                <div class="glass-card p-8 text-center">
-                    <div class="text-3xl font-bold accent-text mb-1 italic">4+</div>
-                    <p class="text-[10px] uppercase font-bold tracking-widest text-secondary">AI Projects</p>
+                <div class="glass-card flex flex-col justify-center items-center text-center py-10">
+                    <span class="text-4xl font-bold text-[#34d399] mb-2">4+</span>
+                    <span class="text-[10px] uppercase font-bold tracking-widest text-[#c0cad6]">Production Projects</span>
                 </div>
-                <div class="glass-card p-8 text-center border-emerald-900">
-                    <div class="text-3xl font-bold accent-text mb-1 italic">94.2%</div>
-                    <p class="text-[10px] uppercase font-bold tracking-widest text-secondary">Model Accuracy</p>
+                <div class="glass-card flex flex-col justify-center items-center text-center py-10 border-emerald-900/40">
+                    <span class="text-4xl font-bold text-[#34d399] mb-2">94.2%</span>
+                    <span class="text-[10px] uppercase font-bold tracking-widest text-[#c0cad6]">Model Accuracy</span>
                 </div>
-                <div class="glass-card p-8 text-center">
-                    <div class="text-3xl font-bold accent-text mb-1 italic">10K+</div>
-                    <p class="text-[10px] uppercase font-bold tracking-widest text-secondary">Records Processed</p>
+                <div class="glass-card flex flex-col justify-center items-center text-center py-10">
+                    <span class="text-4xl font-bold text-[#34d399] mb-2">10K+</span>
+                    <span class="text-[10px] uppercase font-bold tracking-widest text-[#c0cad6]">Records Processed</span>
                 </div>
-                <div class="glass-card p-8 text-center border-emerald-900">
-                    <i data-lucide="shield-check" class="w-6 h-6 mx-auto mb-2 accent-text"></i>
-                    <p class="text-[10px] uppercase font-bold tracking-widest text-secondary">SDM Certified</p>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <section class="py-24 px-6 md:px-20 max-w-7xl mx-auto border-t border-white/5">
-        <div class="grid md:grid-cols-12 gap-12">
-            <div class="md:col-span-7 reveal">
-                <h2 class="text-3xl font-bold mb-8">Professional Bio</h2>
-                <p class="text-secondary leading-loose text-lg mb-8">
-                    I am a final-year Computer Science student specializing in AI-driven systems and predictive analytics. I focus on designing scalable machine learning solutions for real-world problems, including governance automation, NLP classification systems, and analytics dashboards.
-                </p>
-                <div class="flex flex-wrap gap-4 opacity-50">
-                    <i data-lucide="git-branch"></i> <i data-lucide="database"></i> <i data-lucide="cpu"></i> <i data-lucide="line-chart"></i>
-                </div>
-            </div>
-            <div class="md:col-span-5 reveal">
-                <div class="glass-card p-8 bg-emerald-950/10">
-                    <h3 class="text-sm font-bold accent-text uppercase tracking-widest mb-6">Technical Arsenal</h3>
-                    <div class="space-y-4">
-                        <div class="flex justify-between items-center"><span class="text-xs font-bold uppercase">AI/ML Architecture</span> <span class="text-[10px] bg-emerald-900 px-2 py-1 rounded">Expert</span></div>
-                        <div class="flex justify-between items-center"><span class="text-xs font-bold uppercase">Data Engineering</span> <span class="text-[10px] bg-emerald-900 px-2 py-1 rounded">Advanced</span></div>
-                        <div class="flex justify-between items-center"><span class="text-xs font-bold uppercase">Backend Systems</span> <span class="text-[10px] bg-emerald-900 px-2 py-1 rounded">Proficient</span></div>
-                    </div>
+                <div class="glass-card flex flex-col justify-center items-center text-center py-10 border-emerald-900/40">
+                    <i data-lucide="award" class="w-8 h-8 text-[#34d399] mb-2"></i>
+                    <span class="text-[10px] uppercase font-bold tracking-widest text-[#c0cad6]">SDM Recognized</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="projects" class="py-24 px-6 md:px-20 max-w-7xl mx-auto">
-        <div class="flex items-center gap-4 mb-20">
-            <h2 class="text-3xl font-bold uppercase tracking-tighter">Selected Portfolios</h2>
-            <div class="h-[1px] flex-grow bg-white/5"></div>
+    <section id="experience" class="section-spacing px-6 md:px-20 max-w-7xl mx-auto border-t border-white/5">
+        <h2 class="text-section mb-16 uppercase tracking-tighter">Professional Experience</h2>
+        <div class="max-w-4xl">
+            <div class="reveal flex gap-8 md:gap-12">
+                <div class="flex flex-col items-center">
+                    <div class="w-3 h-3 bg-[#34d399] rounded-full shadow-[0_0_15px_#34d399]"></div>
+                    <div class="w-[1px] h-full bg-white/10 mt-2"></div>
+                </div>
+                <div class="pb-16">
+                    <div class="flex flex-col md:flex-row md:items-center gap-2 mb-4">
+                        <h3 class="text-xl font-bold uppercase">Informatics Intern</h3>
+                        <span class="hidden md:block text-white/20">|</span>
+                        <span class="text-[#34d399] font-bold text-xs uppercase tracking-widest">Govt. of Rajasthan • SDM Office</span>
+                    </div>
+                    <ul class="space-y-4 text-[#c0cad6] text-sm leading-relaxed">
+                        <li class="flex gap-3"><i data-lucide="check-circle-2" class="w-4 h-4 text-[#34d399] shrink-0"></i> Developed Excel dashboards for governance analytics and executive decision-making.</li>
+                        <li class="flex gap-3"><i data-lucide="check-circle-2" class="w-4 h-4 text-[#34d399] shrink-0"></i> Automated reconciliation workflows using structured datasets, reducing manual overhead.</li>
+                        <li class="flex gap-3"><i data-lucide="check-circle-2" class="w-4 h-4 text-[#34d399] shrink-0"></i> Validated and processed 10,000+ citizen records to ensure data integrity across state welfare databases.</li>
+                    </ul>
+                    <img src="./public/Internship_work dashboard.png" class="mt-8 rounded-lg border border-white/5 opacity-80 hover:opacity-100 transition" alt="Work Evidence">
+                </div>
+            </div>
         </div>
+    </section>
 
+    <section id="projects" class="section-spacing px-6 md:px-20 max-w-7xl mx-auto border-t border-white/5">
+        <h2 class="text-section mb-16 uppercase tracking-tighter">Case Studies</h2>
         <div class="grid md:grid-cols-2 gap-10">
             <div class="glass-card flex flex-col reveal">
-                <div class="p-8">
-                    <div class="flex justify-between items-start mb-6">
-                        <div>
-                            <h3 class="text-2xl font-bold mb-2">JANSAHAY AI</h3>
-                            <p class="text-xs accent-text font-bold uppercase tracking-widest">Grievance Intelligence System</p>
-                        </div>
-                        <div class="flex gap-2">
-                            <span class="text-[10px] font-bold py-1 px-3 border border-white/10 rounded-full">NLP</span>
-                            <span class="text-[10px] font-bold py-1 px-3 border border-white/10 rounded-full">Flask</span>
-                        </div>
-                    </div>
-                    <img src="./public/dashboard.png" class="rounded-xl border border-white/5 shadow-2xl mb-8 grayscale hover:grayscale-0 transition-all duration-700" alt="JanSahay">
-                    <ul class="space-y-4 text-sm text-secondary">
-                        <li class="flex gap-3"><i data-lucide="check-circle" class="w-4 h-4 accent-text shrink-0"></i> Built NLP classification engine with TF-IDF + ML models</li>
-                        <li class="flex gap-3"><i data-lucide="check-circle" class="w-4 h-4 accent-text shrink-0"></i> Achieved 94.2% classification accuracy</li>
-                        <li class="flex gap-3"><i data-lucide="check-circle" class="w-4 h-4 accent-text shrink-0"></i> Automated citizen complaint routing workflow</li>
+                <div class="mb-6">
+                    <h3 class="text-2xl font-bold mb-2">JANSAHAY AI</h3>
+                    <p class="text-xs text-[#34d399] font-bold uppercase tracking-[0.2em] mb-6">Governance & NLP Platform</p>
+                    <img src="./public/dashboard.png" class="rounded-xl mb-8 grayscale hover:grayscale-0 transition duration-500" alt="JanSahay">
+                    <p class="text-sm text-[#c0cad6] mb-6 leading-relaxed italic">"AI-powered governance platform for grievance classification and welfare scheme prediction."</p>
+                    <ul class="space-y-3 text-sm text-[#c0cad6]">
+                        <li class="flex gap-3"><i data-lucide="minus" class="w-4 h-4 text-[#34d399] shrink-0"></i> Designed NLP pipeline using TF-IDF and ML classifiers.</li>
+                        <li class="flex gap-3"><i data-lucide="minus" class="w-4 h-4 text-[#34d399] shrink-0"></i> Achieved 94.2% accuracy in automated complaint routing.</li>
+                        <li class="flex gap-3"><i data-lucide="minus" class="w-4 h-4 text-[#34d399] shrink-0"></i> Reduced manual processing effort by automating department-level assignment.</li>
                     </ul>
                 </div>
-                <div class="mt-auto border-t border-white/5 p-6 flex justify-between">
-                    <a href="#" class="text-xs font-bold uppercase tracking-widest hover:accent-text transition">GitHub</a>
-                    <a href="#" class="text-xs font-bold uppercase tracking-widest hover:accent-text transition">Case Study <i data-lucide="arrow-up-right" class="inline w-3 h-3"></i></a>
+                <div class="mt-auto pt-6 flex gap-6">
+                    <a href="#" class="text-[10px] font-bold uppercase tracking-widest text-[#34d399] border-b border-[#34d399] pb-1">GitHub</a>
+                    <a href="#" class="text-[10px] font-bold uppercase tracking-widest text-[#34d399] border-b border-[#34d399] pb-1">Case Study</a>
                 </div>
             </div>
 
             <div class="glass-card flex flex-col reveal">
-                <div class="p-8">
-                    <div class="flex justify-between items-start mb-6">
-                        <div>
-                            <h3 class="text-2xl font-bold mb-2">WEATHER ENGINE</h3>
-                            <p class="text-xs accent-text font-bold uppercase tracking-widest">Predictive Analytics Dashboard</p>
-                        </div>
-                        <div class="flex gap-2">
-                            <span class="text-[10px] font-bold py-1 px-3 border border-white/10 rounded-full">Django</span>
-                            <span class="text-[10px] font-bold py-1 px-3 border border-white/10 rounded-full">Regression</span>
-                        </div>
-                    </div>
-                    <img src="./public/home_page.png" class="rounded-xl border border-white/5 shadow-2xl mb-8 grayscale hover:grayscale-0 transition-all duration-700" alt="Weather">
-                    <ul class="space-y-4 text-sm text-secondary">
-                        <li class="flex gap-3"><i data-lucide="check-circle" class="w-4 h-4 accent-text shrink-0"></i> Django ML forecasting application for meteorological trends</li>
-                        <li class="flex gap-3"><i data-lucide="check-circle" class="w-4 h-4 accent-text shrink-0"></i> Integrated historical weather data via REST APIs</li>
-                        <li class="flex gap-3"><i data-lucide="check-circle" class="w-4 h-4 accent-text shrink-0"></i> Visualized predictive trends for public sector planning</li>
+                <div class="mb-6">
+                    <h3 class="text-2xl font-bold mb-2">WEATHER ENGINE</h3>
+                    <p class="text-xs text-[#34d399] font-bold uppercase tracking-[0.2em] mb-6">Predictive Analytics</p>
+                    <img src="./public/home_page.png" class="rounded-xl mb-8 grayscale hover:grayscale-0 transition duration-500" alt="Weather">
+                    <p class="text-sm text-[#c0cad6] mb-6 leading-relaxed italic">"Django-based weather analytics platform with predictive trend visualization."</p>
+                    <ul class="space-y-3 text-sm text-[#c0cad6]">
+                        <li class="flex gap-3"><i data-lucide="minus" class="w-4 h-4 text-[#34d399] shrink-0"></i> Built robust backend using Django REST Framework.</li>
+                        <li class="flex gap-3"><i data-lucide="minus" class="w-4 h-4 text-[#34d399] shrink-0"></i> Integrated real-time weather APIs for accurate data ingestion.</li>
+                        <li class="flex gap-3"><i data-lucide="minus" class="w-4 h-4 text-[#34d399] shrink-0"></i> Designed visual dashboards for predictive trend monitoring.</li>
                     </ul>
                 </div>
-                <div class="mt-auto border-t border-white/5 p-6 flex justify-between">
-                    <a href="#" class="text-xs font-bold uppercase tracking-widest hover:accent-text transition">GitHub</a>
-                    <a href="#" class="text-xs font-bold uppercase tracking-widest hover:accent-text transition">View Project <i data-lucide="arrow-up-right" class="inline w-3 h-3"></i></a>
+                <div class="mt-auto pt-6 flex gap-6">
+                    <a href="#" class="text-[10px] font-bold uppercase tracking-widest text-[#34d399] border-b border-[#34d399] pb-1">GitHub</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-24 px-6 md:px-20 max-w-7xl mx-auto bg-[#161a21]/30 rounded-[3rem] border border-white/5">
-        <h2 class="text-2xl font-bold mb-16 uppercase tracking-widest text-center">Professional Experience</h2>
-        <div class="max-w-3xl mx-auto space-y-12">
-            <div class="flex gap-8 reveal">
-                <div class="flex flex-col items-center">
-                    <div class="w-12 h-12 rounded-full border border-emerald-500 bg-emerald-950 flex items-center justify-center">
-                        <i data-lucide="briefcase" class="w-5 h-5 accent-text"></i>
-                    </div>
-                    <div class="w-[1px] h-full bg-white/10 mt-4"></div>
-                </div>
-                <div class="pb-12">
-                    <h3 class="text-xl font-bold uppercase mb-2">Informatics Analyst Intern</h3>
-                    <p class="text-xs accent-text font-bold mb-6">SDM Office, Govt of Rajasthan • 2025-26</p>
-                    <div class="space-y-4 text-secondary text-sm">
-                        <p class="flex gap-3"><i data-lucide="arrow-right" class="w-4 h-4 accent-text"></i> Built Excel dashboards for high-fidelity governance analytics</p>
-                        <p class="flex gap-3"><i data-lucide="arrow-right" class="w-4 h-4 accent-text"></i> Automated reconciliation workflows between state databases</p>
-                        <p class="flex gap-3"><i data-lucide="arrow-right" class="w-4 h-4 accent-text"></i> Processed and validated 10,000+ statewide citizen records</p>
-                    </div>
-                    <img src="./public/Internship_work dashboard.png" class="mt-8 rounded-xl border border-white/5 opacity-80 hover:opacity-100 transition" alt="Audit Proof">
-                </div>
+    <section id="skills" class="section-spacing px-6 md:px-20 max-w-7xl mx-auto border-t border-white/5">
+        <h2 class="text-section mb-16 uppercase tracking-tighter">Technical Arsenal</h2>
+        <div class="grid md:grid-cols-3 gap-12 reveal">
+            <div>
+                <h4 class="text-xs font-bold uppercase tracking-[0.3em] text-[#34d399] mb-8">AI & Machine Learning</h4>
+                <ul class="space-y-4 text-sm font-semibold">
+                    <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 text-[#34d399]"></i> Python (Expert)</li>
+                    <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 text-[#34d399]"></i> NLP & Text Mining</li>
+                    <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 text-[#34d399]"></i> Scikit-learn</li>
+                    <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 text-[#34d399]"></i> PyTorch & TensorFlow</li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-xs font-bold uppercase tracking-[0.3em] text-[#34d399] mb-8">Data & Analytics</h4>
+                <ul class="space-y-4 text-sm font-semibold">
+                    <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 text-[#34d399]"></i> SQL (Complex Queries)</li>
+                    <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 text-[#34d399]"></i> Advanced Excel</li>
+                    <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 text-[#34d399]"></i> Pandas & NumPy</li>
+                    <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 text-[#34d399]"></i> Data Visualization</li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-xs font-bold uppercase tracking-[0.3em] text-[#34d399] mb-8">Development & Tools</h4>
+                <ul class="space-y-4 text-sm font-semibold">
+                    <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 text-[#34d399]"></i> Django & Flask</li>
+                    <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 text-[#34d399]"></i> RESTful APIs</li>
+                    <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 text-[#34d399]"></i> Git & GitHub</li>
+                    <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 text-[#34d399]"></i> VS Code / Linux</li>
+                </ul>
             </div>
         </div>
     </section>
 
-    <section class="py-32 px-6 text-center">
-        <div class="max-w-2xl mx-auto glass-card p-12 reveal">
-            <div class="w-20 h-20 bg-emerald-950 rounded-full flex items-center justify-center mx-auto mb-8 border border-emerald-500">
-                <i data-lucide="award" class="w-10 h-10 accent-text"></i>
-            </div>
-            <h2 class="text-3xl font-bold mb-4 uppercase tracking-tighter">SDM Certified</h2>
-            <p class="text-secondary leading-relaxed mb-8">
-                Recognized for validating 10,000+ citizen records and improving reporting efficiency by <span class="accent-text font-bold">40%</span>.
+    <section class="section-spacing px-6 text-center border-t border-white/5">
+        <div class="max-w-2xl mx-auto mb-20 reveal">
+            <h3 class="text-xs font-bold uppercase tracking-[0.5em] text-[#34d399] mb-6">Recognition</h3>
+            <h2 class="text-3xl font-bold uppercase mb-6">SDM Certified Analyst</h2>
+            <p class="text-[#c0cad6] leading-relaxed">
+                Recognized for validating over 10,000 government records and improving operational efficiency by <span class="text-[#34d399] font-bold">40%</span>. Bridging the gap between research models and real-world deployment.
             </p>
-            <a href="./public/internship_certificate.pdf" target="_blank" class="text-xs font-bold uppercase tracking-widest border-b border-emerald-500 pb-2 hover:accent-text transition">View Official Certificate</a>
+        </div>
+
+        <div id="contact" class="reveal">
+            <h2 class="text-huge italic tracking-tighter mb-10">OPEN FOR OPPORTUNITIES</h2>
+            <p class="text-[#c0cad6] mb-12 font-medium">I am open to AI/ML internships and collaborations. Feel free to reach out.</p>
+            <div class="flex justify-center gap-10">
+                <a href="mailto:akshatgaur44@gmail.com" class="text-xs font-bold uppercase tracking-[0.3em] hover:text-[#34d399] transition">Email</a>
+                <a href="https://www.linkedin.com/in/akshat-gaur-b608ba2a9" target="_blank" class="text-xs font-bold uppercase tracking-[0.3em] hover:text-[#34d399] transition">LinkedIn</a>
+                <a href="https://github.com/akshatgaur64" target="_blank" class="text-xs font-bold uppercase tracking-[0.3em] hover:text-[#34d399] transition">GitHub</a>
+            </div>
+            <p class="mt-40 text-[9px] uppercase tracking-[1em] text-white/10">Akshat Gaur • 2026</p>
         </div>
     </section>
-
-    <footer class="py-32 px-6 text-center border-t border-white/5">
-        <h2 class="text-4xl font-bold mb-6 uppercase italic tracking-tighter">Open for Opportunities</h2>
-        <p class="text-secondary mb-12 max-w-lg mx-auto leading-relaxed">
-            I am open to internships and AI/ML collaborations. Feel free to reach out via my socials.
-        </p>
-        <div class="flex justify-center gap-10">
-            <a href="mailto:akshatgaur44@gmail.com" class="hover:accent-text transition font-bold text-xs uppercase tracking-widest">Email</a>
-            <a href="https://www.linkedin.com/in/akshat-gaur-b608ba2a9" target="_blank" class="hover:accent-text transition font-bold text-xs uppercase tracking-widest">LinkedIn</a>
-            <a href="https://github.com/akshatgaur64" target="_blank" class="hover:accent-text transition font-bold text-xs uppercase tracking-widest">GitHub</a>
-        </div>
-        <p class="mt-32 text-[10px] text-white/10 uppercase tracking-[1em]">Akshat Gaur • 2026</p>
-    </footer>
 
     <script>
         lucide.createIcons();
-
-        // Reveal Animation Observer
+        
+        // Scroll Animation Logic
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
