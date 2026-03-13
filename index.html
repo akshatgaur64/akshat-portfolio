@@ -1,145 +1,290 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Akshat Gaur | AI & ML Developer</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #2f6fed;
-            --bg-light: #f5f7fb;
-            --text-main: #1a1e26;
-        }
-        body { 
-            font-family: 'Inter', sans-serif; 
-            background-color: #ffffff; 
-            color: var(--text-main);
-            scroll-behavior: smooth;
-        }
-        .nav-sticky { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(8px); }
-        .skill-card, .project-card { 
-            transition: all 0.3s ease; 
-            background: #ffffff;
-            border: 1px solid #e2e8f0;
-            border-radius: 1rem;
-        }
-        .skill-card:hover, .project-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px -5px rgba(47, 111, 237, 0.1); }
-        .reveal { opacity: 0; transform: translateY(20px); transition: all 0.6s ease-out; }
-        .reveal.active { opacity: 1; transform: translateY(0); }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Akshat Gaur | AI Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* GLOBAL */
+
+body{
+margin:0;
+font-family:Inter, sans-serif;
+background:#ffffff;
+color:#111;
+line-height:1.6;
+}
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:60px 20px;
+}
+
+/* NAVBAR */
+
+nav{
+background:#ffffff;
+border-bottom:1px solid #eee;
+position:sticky;
+top:0;
+z-index:999;
+}
+
+nav .wrap{
+max-width:1100px;
+margin:auto;
+padding:16px 20px;
+display:flex;
+justify-content:space-between;
+}
+
+nav a{
+text-decoration:none;
+margin-left:20px;
+color:#555;
+font-size:14px;
+}
+
+nav a:hover{color:#2f6fed}
+
+/* HERO */
+
+.hero{
+display:flex;
+align-items:center;
+gap:50px;
+padding-top:40px;
+}
+
+.hero img{
+width:160px;
+border-radius:10px;
+}
+
+.hero h1{font-size:38px;margin:8px 0}
+
+.hero h2{
+color:#2f6fed;
+font-weight:500;
+margin-bottom:12px;
+}
+
+.hero p{
+color:#555;
+max-width:500px;
+}
+
+/* BUTTONS */
+
+.btn{
+padding:10px 18px;
+border-radius:6px;
+font-size:14px;
+text-decoration:none;
+margin-right:10px;
+}
+
+.primary{
+background:#2f6fed;
+color:white;
+}
+
+.secondary{
+border:1px solid #2f6fed;
+color:#2f6fed;
+}
+
+/* SKILLS */
+
+.gray{background:#f5f7fb}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.card{
+background:white;
+padding:22px;
+border-radius:10px;
+box-shadow:0 3px 10px rgba(0,0,0,.05);
+}
+
+.card h3{margin-bottom:10px}
+
+/* PROJECTS */
+
+.project{
+background:white;
+border-radius:10px;
+overflow:hidden;
+box-shadow:0 3px 12px rgba(0,0,0,.06);
+}
+
+.project img{
+width:100%;
+height:200px;
+object-fit:cover;
+}
+
+.project-content{
+padding:18px;
+}
+
+.project-content p{
+color:#555;
+margin:10px 0;
+}
+
+/* CONTACT */
+
+.center{text-align:center}
+
+</style>
+
 </head>
-<body class="antialiased">
 
-    <nav class="fixed top-0 w-full z-50 nav-sticky border-b border-gray-100">
-        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="font-bold text-lg tracking-tight text-[#2f6fed] uppercase">Akshat Gaur</div>
-            <div class="hidden md:flex gap-8 text-[10px] font-bold uppercase tracking-widest text-gray-400">
-                <a href="#projects" class="hover:text-[#2f6fed]">Projects</a>
-                <a href="#experience" class="hover:text-[#2f6fed]">Experience</a>
-                <a href="Akshat_Gaur_Resume.pdf" target="_blank" class="text-[#2f6fed]">Resume</a>
-            </div>
-        </div>
-    </nav>
+<body>
 
-    <header class="pt-40 pb-24 px-6 max-w-6xl mx-auto">
-        <div class="flex flex-col md:flex-row items-center gap-12">
-            <div class="w-44 h-44 shrink-0">
-                <img src="akshat_profile.png" alt="Akshat Gaur" class="w-full h-full object-cover rounded-3xl shadow-lg border-4 border-white">
-            </div>
-            <div class="reveal active">
-                <span class="text-xs font-bold text-[#2f6fed] mb-2 block uppercase tracking-widest">AI & Machine Learning Developer</span>
-                <h1 class="text-6xl font-extrabold text-[#1a1e26] mb-4 tracking-tighter">Akshat Gaur</h1>
-                <p class="max-w-xl text-gray-500 leading-relaxed mb-8 text-lg">
-                    I build scalable AI systems using Machine Learning, NLP, and Predictive Analytics. Specialized in solving real-world governance problems through intelligent data solutions.
-                </p>
-                <div class="flex gap-4">
-                    <a href="#projects" class="bg-[#2f6fed] text-white px-8 py-3 rounded-xl font-bold text-sm shadow-lg shadow-blue-100 transition hover:brightness-110">View Projects</a>
-                    <a href="Akshat_Gaur_Resume.pdf" target="_blank" class="border-2 border-gray-100 text-gray-700 px-8 py-3 rounded-xl font-bold text-sm hover:bg-gray-50 transition">Resume</a>
-                </div>
-            </div>
-        </div>
-    </header>
+<!-- NAVBAR -->
 
-    <section id="experience" class="py-24 bg-[#f5f7fb] px-6">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-3xl font-bold mb-16 text-center italic">Professional Experience</h2>
-            
-            <div class="grid grid-cols-1 gap-10">
-                <div class="skill-card p-10 reveal">
-                    <div class="flex flex-col md:flex-row justify-between mb-8">
-                        <div>
-                            <h3 class="text-2xl font-black">Informatics Analyst Intern</h3>
-                            <p class="text-[#2f6fed] font-bold uppercase text-xs tracking-widest">SDM Office, Govt. of Rajasthan</p>
-                        </div>
-                    </div>
-                    
-                    <div class="grid md:grid-cols-2 gap-8 mb-10">
-                        <div class="space-y-3">
-                            <span class="text-[10px] font-bold uppercase tracking-widest text-gray-400">Excel Analytics Dashboard</span>
-                            <img src="internship_dashboard.png" class="rounded-xl border shadow-sm" alt="Dashboard">
-                        </div>
-                        <div class="space-y-3">
-                            <span class="text-[10px] font-bold uppercase tracking-widest text-gray-400">Database Reconciliation Table</span>
-                            <img src="Table of government records.png" class="rounded-xl border shadow-sm" alt="Records">
-                        </div>
-                    </div>
+<nav>
+<div class="wrap">
+<b>Akshat Gaur</b>
 
-                    <div class="p-6 bg-blue-50 rounded-2xl border border-blue-100 flex flex-col md:flex-row items-center justify-between gap-6">
-                        <p class="text-sm text-gray-600 italic">"Validated 10,000+ records and improved efficiency by 40%."</p>
-                        <a href="internship_certificate.pdf" target="_blank" class="bg-[#2f6fed] text-white px-6 py-3 rounded-xl text-xs font-black uppercase tracking-widest hover:brightness-110 transition shadow-md">View Certificate</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<div>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
+</div>
 
-    <section id="projects" class="py-24 px-6 max-w-6xl mx-auto">
-        <h2 class="text-3xl font-bold mb-16 text-center italic">Core Projects</h2>
-        <div class="grid md:grid-cols-2 gap-12">
-            <div class="project-card flex flex-col reveal">
-                <div class="p-8">
-                    <h3 class="text-2xl font-black mb-2 uppercase italic">JanSahay AI</h3>
-                    <p class="text-gray-400 text-xs mb-8 uppercase tracking-widest">NLP • 94.2% AI Accuracy</p>
-                    <img src="dashboard.png" class="rounded-xl border shadow-md mb-8" alt="JanSahay">
-                    <div class="grid grid-cols-2 gap-4">
-                        <img src="adminlog.png" class="rounded-lg border shadow-sm">
-                        <img src="welfare.png" class="rounded-lg border shadow-sm">
-                    </div>
-                </div>
-            </div>
-            <div class="project-card flex flex-col reveal">
-                <div class="p-8">
-                    <h3 class="text-2xl font-black mb-2 uppercase italic">Weather Engine</h3>
-                    <p class="text-gray-400 text-xs mb-8 uppercase tracking-widest">Predictive Analytics • Django</p>
-                    <img src="home_page.png" class="rounded-xl border shadow-md mb-8" alt="Weather">
-                    <img src="prediction_trend.png" class="rounded-lg border shadow-sm w-full">
-                </div>
-            </div>
-        </div>
-    </section>
+</div>
+</nav>
 
-    <footer id="contact" class="py-24 text-center border-t border-gray-100">
-        <h2 class="text-4xl font-extrabold mb-8 italic tracking-tighter uppercase">Open to Opportunities</h2>
-        <div class="flex justify-center gap-10 text-[10px] font-bold text-gray-400 uppercase tracking-[0.4em]">
-            <a href="mailto:akshatgaur44@gmail.com" class="hover:text-[#2f6fed]">Email</a>
-            <a href="https://linkedin.com/in/akshat-gaur-b608ba2a9" target="_blank" class="hover:text-[#2f6fed]">LinkedIn</a>
-            <a href="https://github.com/akshatgaur64" target="_blank" class="hover:text-[#2f6fed]">GitHub</a>
-        </div>
-    </footer>
+<!-- HERO -->
 
-    <script>
-        lucide.createIcons();
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                }
-            });
-        }, { threshold: 0.1 });
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-    </script>
+<section class="container hero" id="about">
+
+<img src="./akshat_profile.png">
+
+<div>
+
+<div style="color:#888">Hello, my name is</div>
+
+<h1>Akshat Gaur</h1>
+
+<h2>AI & Machine Learning Developer</h2>
+
+<p>
+I build scalable AI systems using Machine Learning, NLP, and Predictive Analytics.  
+Focused on solving real-world governance and automation problems.
+</p><br>
+
+<a href="#projects" class="btn primary">View Projects</a>
+<a href="./Akshat_Gaur_Resume.pdf" class="btn secondary">Download Resume</a>
+
+</div>
+
+</section>
+
+<!-- SKILLS -->
+
+<section class="container gray" id="skills">
+
+<h2>Skills Overview</h2>
+<p style="color:#666">Core technical strengths across AI, backend systems, and analytics.</p><br>
+
+<div class="grid">
+
+<div class="card">
+<h3>AI & ML</h3>
+Python • NLP • Scikit-learn • TensorFlow • PyTorch
+</div>
+
+<div class="card">
+<h3>Backend & Data</h3>
+SQL • Pandas • NumPy • Django • REST APIs
+</div>
+
+<div class="card">
+<h3>Tools & Platforms</h3>
+GitHub • Excel Analytics • Power BI • Linux • Deployment
+</div>
+
+</div>
+
+</section>
+
+<!-- PROJECTS -->
+
+<section class="container" id="projects">
+
+<h2>Featured Projects</h2><br>
+
+<div class="grid">
+
+<div class="project">
+<img src="./dashboard.png">
+<div class="project-content">
+<h3>JanSahay AI</h3>
+<p>AI governance platform for grievance classification and welfare prediction.</p>
+
+<a href="./home_page.png" class="btn secondary">Case Study</a>
+<a href="./dashboard.png" class="btn primary">Live Demo</a>
+
+</div>
+</div>
+
+<div class="project">
+<img src="./prediction_trend.png">
+<div class="project-content">
+<h3>Weather Analytics</h3>
+<p>Predictive analytics dashboard for real-time weather forecasting.</p>
+
+<a href="./prediction_trend.png" class="btn secondary">Case Study</a>
+<a href="./prediction_trend.png" class="btn primary">Live Demo</a>
+
+</div>
+</div>
+
+<div class="project">
+<img src="./internship_dashboard.png">
+<div class="project-content">
+<h3>Informatics Dashboard</h3>
+<p>Excel-based automation system improving reporting workflows.</p>
+
+<a href="./internship_certificate.pdf" class="btn secondary">Certificate</a>
+<a href="./internship_dashboard.png" class="btn primary">Preview</a>
+
+</div>
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section class="container gray center" id="contact">
+
+<h2>Let's Connect</h2>
+
+<p style="color:#666">
+Open to AI internships, collaborations, and research opportunities.
+</p><br>
+
+<a href="mailto:akshatgaur44@gmail.com" class="btn primary">Email Me</a>
+
+</section>
+
 </body>
 </html>
