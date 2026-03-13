@@ -1,1 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Akshat Gaur | AI & Machine Learning Developer</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* RESET */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#0f1115;
+color:#ffffff;
+line-height:1.7;
+}
+
+/* CONTAINER */
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:90px 20px;
+}
+
+/* HERO */
+
+.hero{
+display:flex;
+align-items:center;
+justify-content:space-between;
+flex-wrap:wrap;
+gap:40px;
+}
+
+.hero img{
+width:170px;
+border-radius:50%;
+border:5px solid #1c2128;
+transition:.4s;
+}
+
+.hero img:hover{
+transform:scale(1.05);
+}
+
+.hero-text{
+max-width:600px;
+animation:fadeUp 1s ease;
+}
+
+.hero-text h1{
+font-size:44px;
+margin-bottom:10px;
+}
+
+.hero-text h2{
+font-size:18px;
+color:#34d399;
+margin-bottom:18px;
+font-weight:500;
+}
+
+.hero-text p{
+color:#c0cad6;
+margin-bottom:25px;
+}
+
+/* BUTTONS */
+
+.btn{
+padding:12px 22px;
+border-radius:7px;
+text-decoration:none;
+margin-right:12px;
+font-weight:500;
+transition:.3s;
+}
+
+.btn-primary{
+background:#34d399;
+color:#000;
+}
+
+.btn-primary:hover{
+background:#2fc18a;
+}
+
+.btn-outline{
+border:1px solid #34d399;
+color:#34d399;
+}
+
+.btn-outline:hover{
+background:#34d399;
+color:#000;
+}
+
+/* TITLES */
+
+.section-title{
+font-size:30px;
+margin-bottom:35px;
+}
+
+/* SKILLS */
+
+.skills{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+}
+
+.card{
+background:#161a21;
+padding:26px;
+border-radius:12px;
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-6px);
+}
+
+.card ul{
+margin-top:12px;
+}
+
+.card li{
+margin-bottom:8px;
+color:#c0cad6;
+}
+
+/* PROJECTS */
+
+.projects{
+display:grid;
+gap:35px;
+}
+
+.project{
+background:#161a21;
+padding:22px;
+border-radius:12px;
+transition:.3s;
+}
+
+.project:hover{
+transform:translateY(-6px);
+}
+
+.project img{
+width:100%;
+border-radius:8px;
+margin-bottom:15px;
+}
+
+.project h3{
+margin-bottom:10px;
+}
+
+.project p{
+color:#c0cad6;
+margin-bottom:8px;
+}
+
+/* CONTACT */
+
+.contact{
+text-align:center;
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:50px 0;
+color:#777;
+}
+
+/* ANIMATION */
+
+@keyframes fadeUp{
+from{opacity:0;transform:translateY(30px);}
+to{opacity:1;transform:translateY(0);}
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- HERO -->
+
+<section class="container hero">
+
+<img src="akshat_profile.png" alt="Akshat Gaur">
+
+<div class="hero-text">
+
+<h1>Akshat Gaur</h1>
+<h2>AI & Machine Learning Developer</h2>
+
+<p>
+I design and develop scalable AI systems using machine learning, NLP, and predictive analytics.  
+My work focuses on solving real-world problems through intelligent automation and production-ready data solutions.
+</p>
+
+<a href="#projects" class="btn btn-primary">View Projects</a>
+<a href="Akshat_Gaur_Resume.pdf" class="btn btn-outline">Download Resume</a>
+
+</div>
+
+</section>
+
+<!-- SKILLS -->
+
+<section class="container">
+
+<h2 class="section-title">Skills Overview</h2>
+
+<div class="skills">
+
+<div class="card">
+<h3>AI & Machine Learning</h3>
+<ul>
+<li>Python</li>
+<li>Natural Language Processing</li>
+<li>Scikit-learn</li>
+<li>TensorFlow</li>
+<li>PyTorch</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Data & Analytics</h3>
+<ul>
+<li>SQL</li>
+<li>Excel Dashboards</li>
+<li>Pandas</li>
+<li>NumPy</li>
+<li>Data Visualization</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Development & Tools</h3>
+<ul>
+<li>React</li>
+<li>Django</li>
+<li>REST APIs</li>
+<li>GitHub</li>
+<li>VS Code</li>
+</ul>
+</div>
+
+</div>
+</section>
+
+<!-- PROJECTS -->
+
+<section class="container" id="projects">
+
+<h2 class="section-title">Selected Projects</h2>
+
+<div class="projects">
+
+<div class="project">
+<img src="dashboard.png">
+<h3>JanSahay AI</h3>
+<p>AI-powered governance platform for grievance classification and welfare prediction.</p>
+<p>
+• Designed NLP pipeline with TF-IDF + ML models  
+• Achieved 94.2% classification accuracy  
+• Automated complaint routing workflows  
+</p>
+</div>
+
+<div class="project">
+<img src="prediction_trend.png">
+<h3>Weather Analytics Engine</h3>
+<p>Django-based weather analytics dashboard with predictive visualization.</p>
+<p>
+• Integrated real-time APIs  
+• Built predictive trend dashboards  
+• Designed scalable backend workflows  
+</p>
+</div>
+
+<div class="project">
+<img src="Internship_work dashboard.png">
+<h3>Informatics Audit Dashboard</h3>
+<p>Excel-based governance analytics dashboard.</p>
+<p>
+• Automated reconciliation workflows  
+• Processed structured datasets  
+• Improved reporting efficiency  
+</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section class="container contact">
+
+<h2 class="section-title">Open for Opportunities</h2>
+
+<p style="color:#c0cad6;margin-bottom:22px;">
+I am open to AI/ML internships and collaborations. Feel free to reach out.
+</p>
+
+<a href="mailto:akshatgaur44@gmail.com" class="btn btn-primary">Email Me</a>
+
+</section>
+
+<footer>
+© 2026 Akshat Gaur
+</footer>
+
+</body>
+</html>
