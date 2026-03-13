@@ -4,91 +4,101 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Akshat Gaur | AI & ML Developer</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #0f1115; color: white; margin: 0; }
-        .bento-card { background: #161a21; border: 1px solid rgba(255,255,255,0.05); border-radius: 16px; padding: 24px; transition: 0.3s; }
-        .bento-card:hover { border-color: #34d399; transform: translateY(-5px); }
-        .accent-text { color: #34d399; }
-        .btn-main { background: #0f5132; border: 1px solid #34d399; padding: 12px 24px; border-radius: 8px; font-weight: bold; text-transform: uppercase; font-size: 12px; }
+        /* CORE STYLING - NO EXTERNAL SCRIPTS NEEDED */
+        * { box-sizing: border-box; }
+        body { margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #0f1115; color: #ffffff; line-height: 1.6; }
+        
+        /* SIDEBAR */
+        .sidebar { width: 320px; background: linear-gradient(180deg, #0f5132 0%, #0a3622 100%); position: fixed; height: 100vh; padding: 40px; text-align: center; border-right: 1px solid rgba(255,255,255,0.05); overflow-y: auto; }
+        .main-content { margin-left: 320px; padding: 80px; max-width: 1200px; }
+        
+        .profile-img { width: 140px; height: 140px; rounded-radius: 50%; border: 3px solid #34d399; border-radius: 50%; object-fit: cover; margin-bottom: 20px; }
+        h1 { font-size: 28px; margin: 0; letter-spacing: -1px; text-transform: uppercase; font-weight: 800; }
+        .subtitle { color: #34d399; font-weight: bold; font-size: 12px; letter-spacing: 3px; margin-top: 10px; display: block; text-transform: uppercase; }
+        
+        /* BUTTONS */
+        .btn { display: block; padding: 15px; background: #ffffff; color: #0f5132; text-decoration: none; border-radius: 12px; font-weight: bold; margin-top: 30px; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
+        .btn:hover { background: #34d399; color: #000; }
+
+        /* BENTO CARDS */
+        .section-title { font-size: 32px; border-bottom: 3px solid #34d399; display: inline-block; margin-bottom: 40px; text-transform: uppercase; letter-spacing: -1px; }
+        .glass-card { background: #161a21; border-radius: 20px; padding: 30px; margin-bottom: 30px; border: 1px solid rgba(255,255,255,0.05); }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        img { width: 100%; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); margin-top: 15px; }
+        
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+            .sidebar { position: relative; width: 100%; height: auto; }
+            .main-content { margin-left: 0; padding: 40px 20px; }
+            .grid { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
 
-    <nav class="p-6 border-b border-white/5 flex justify-between items-center bg-[#0f1115]">
-        <div class="font-black tracking-tighter uppercase text-xl">Akshat Gaur</div>
-        <div class="flex gap-6 text-[10px] font-bold uppercase tracking-widest text-gray-400">
-            <a href="./public/Akshat_Gaur_Resume.pdf" target="_blank">Resume</a>
-            <a href="https://github.com/akshatgaur64" target="_blank">GitHub</a>
+    <aside class="sidebar">
+        <img src="./public/akshat_profile.png" class="profile-img" alt="Akshat Gaur">
+        <h1>Akshat Gaur</h1>
+        <span class="subtitle">AI & ML Developer</span>
+        <p style="font-size: 13px; color: #b7c0cc; margin-top: 20px;">Building scalable AI systems with a focus on real-world governance and analytics.</p>
+        
+        <div style="margin-top: 40px; text-align: left;">
+            <a href="#experience" style="color: white; text-decoration: none; display: block; margin-bottom: 15px; font-weight: bold; font-size: 14px;">→ EXPERIENCE</a>
+            <a href="#projects" style="color: white; text-decoration: none; display: block; margin-bottom: 15px; font-weight: bold; font-size: 14px;">→ PROJECTS</a>
         </div>
-    </nav>
 
-    <header class="py-20 px-6 max-w-6xl mx-auto">
-        <div class="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-                <img src="./public/akshat_profile.png" class="w-20 h-20 rounded-full border-2 border-[#34d399] mb-6 object-cover" alt="Akshat">
-                <h1 class="text-6xl font-black tracking-tighter mb-4 uppercase">Akshat Gaur</h1>
-                <p class="accent-text font-bold uppercase tracking-[0.3em] text-sm mb-6">AI & Machine Learning Developer</p>
-                <p class="text-gray-400 text-lg leading-relaxed mb-10">
-                    Designing scalable AI systems using NLP and predictive analytics. 
-                    Proven impact in public-sector data automation for the **SDM Office**.
-                </p>
-                <a href="#experience" class="btn-main inline-block">View Experience</a>
-            </div>
-            
-            <div class="grid grid-cols-2 gap-4">
-                <div class="bento-card text-center">
-                    <div class="text-3xl font-black accent-text">94.2%</div>
-                    <div class="text-[10px] uppercase font-bold tracking-widest text-gray-500">Accuracy</div>
-                </div>
-                <div class="bento-card text-center">
-                    <div class="text-3xl font-black accent-text">10K+</div>
-                    <div class="text-[10px] uppercase font-bold tracking-widest text-gray-500">Records</div>
-                </div>
-            </div>
-        </div>
-    </header>
+        <a href="./public/Akshat_Gaur_Resume.pdf" target="_blank" class="btn">Download Resume</a>
+    </aside>
 
-    <section id="experience" class="py-20 px-6 max-w-6xl mx-auto border-t border-white/5">
-        <h2 class="text-3xl font-black uppercase tracking-tighter mb-12">Professional Experience</h2>
-        <div class="grid gap-10">
-            <div class="bento-card">
-                <h3 class="text-xl font-bold mb-2">Informatics Intern @ SDM Office</h3>
-                <p class="text-gray-400 text-sm mb-8">Validated 10,000+ government records and automated analytics workflows.</p>
-                <div class="grid md:grid-cols-2 gap-6">
-                    <img src="./public/Internship_work dashboard.png" class="rounded-lg border border-white/5" alt="Dashboard">
-                    <img src="./public/Table of government records.png" class="rounded-lg border border-white/5" alt="Records">
+    <main class="main-content">
+        
+        <section id="experience">
+            <h2 class="section-title">Professional Experience</h2>
+            <div class="glass-card">
+                <h3 style="margin:0; color: #34d399;">Informatics Intern</h3>
+                <p style="font-size: 14px; color: #aaa;">SDM Office, Govt of Rajasthan • 2025-26</p>
+                <p style="font-size: 15px; color: #ccc;">Validated 10,000+ records and automated governance analytics workflows using Python and Excel.</p>
+                
+                <div class="grid">
+                    <div>
+                        <p style="font-size: 10px; font-weight: bold; color: #555;">DASHBOARD PROOF</p>
+                        <img src="./public/Internship_work dashboard.png" alt="Dashboard">
+                    </div>
+                    <div>
+                        <p style="font-size: 10px; font-weight: bold; color: #555;">DATA RECONCILIATION</p>
+                        <img src="./public/Table of government records.png" alt="Records">
+                    </div>
                 </div>
-                <div class="mt-8">
-                    <a href="./public/internship_certificate.pdf" target="_blank" class="accent-text text-xs font-bold uppercase border-b border-[#34d399] pb-1">View SDM Certificate</a>
-                </div>
+                <a href="./public/internship_certificate.pdf" target="_blank" style="color: #34d399; font-size: 12px; font-weight: bold; display: block; margin-top: 20px; text-decoration: none;">VIEW SDM CERTIFICATE ↗</a>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="py-20 px-6 max-w-6xl mx-auto border-t border-white/5">
-        <h2 class="text-3xl font-black uppercase tracking-tighter mb-12 italic">Core Projects</h2>
-        <div class="grid md:grid-cols-2 gap-8">
-            <div class="bento-card">
-                <h3 class="text-xl font-bold mb-4">JanSahay AI</h3>
-                <img src="./public/dashboard.png" class="rounded-lg mb-6" alt="JanSahay">
-                <div class="flex gap-2">
-                    <img src="./public/adminlog.png" class="w-1/2 rounded-md">
-                    <img src="./public/welfare.png" class="w-1/2 rounded-md">
+        <section id="projects" style="margin-top: 100px;">
+            <h2 class="section-title">Core AI Projects</h2>
+            <div class="grid">
+                <div class="glass-card">
+                    <h3 style="margin:0;">JanSahay AI</h3>
+                    <p style="font-size: 13px; color: #34d399; font-weight: bold;">NLP Classification • 94.2% Accuracy</p>
+                    <img src="./public/dashboard.png" alt="JanSahay">
+                    <div style="display: flex; gap: 10px; margin-top: 10px;">
+                        <img src="./public/adminlog.png" style="width: 48%; height: 60px; object-fit: cover;">
+                        <img src="./public/welfare.png" style="width: 48%; height: 60px; object-fit: cover;">
+                    </div>
+                </div>
+                <div class="glass-card">
+                    <h3 style="margin:0;">Weather Engine</h3>
+                    <p style="font-size: 13px; color: #34d399; font-weight: bold;">Django • Predictive Trends</p>
+                    <img src="./public/home_page.png" alt="Weather">
+                    <img src="./public/prediction_trend.png" style="margin-top: 10px;">
                 </div>
             </div>
-            <div class="bento-card">
-                <h3 class="text-xl font-bold mb-4">Weather Engine</h3>
-                <img src="./public/home_page.png" class="rounded-lg mb-6" alt="Weather">
-                <img src="./public/prediction_trend.png" class="w-full rounded-md" alt="Trend">
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <footer class="py-20 text-center border-t border-white/5 opacity-30">
-        <p class="text-[10px] font-bold uppercase tracking-[1em]">Akshat Gaur • 2026</p>
-    </footer>
+        <footer style="margin-top: 100px; opacity: 0.2; text-align: center; font-size: 10px; letter-spacing: 5px;">
+            AKSHAT GAUR © 2026
+        </footer>
+    </main>
 
 </body>
 </html>
