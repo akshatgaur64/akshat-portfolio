@@ -17,8 +17,6 @@
         .studio-card:hover { border-color: #22c55e; transform: translateY(-5px); box-shadow: 0 40px 80px -20px rgba(0,0,0,0.05); }
         .tech-badge { background: #f0fdf4; color: #16a34a; padding: 4px 12px; border-radius: 99px; font-size: 0.75rem; font-weight: 600; border: 1px solid #dcfce7; }
         .text-huge { font-size: clamp(3rem, 7vw, 6rem); line-height: 0.9; letter-spacing: -0.04em; }
-        /* Removed grayscale filter to fix photo bug */
-        .profile-photo { object-fit: cover; transition: transform 0.5s ease; }
     </style>
 </head>
 <body class="flex flex-col md:flex-row min-h-screen">
@@ -26,110 +24,97 @@
     <aside class="w-full md:w-80 sidebar-gradient text-white md:fixed h-full z-50 flex flex-col p-8 overflow-y-auto">
         <div class="text-center mb-10">
             <div class="relative inline-block mb-4">
-                <img src="public/akshat_profile.png" alt="Akshat Gaur" class="profile-photo w-32 h-32 rounded-full border-4 border-white/20 shadow-xl bg-gray-100">
+                <img src="akshat_profile.png" alt="Akshat Gaur" class="w-32 h-32 rounded-full border-4 border-white/20 shadow-xl bg-gray-100 object-cover">
                 <div class="absolute bottom-1 right-1 w-6 h-6 bg-green-400 border-4 border-white rounded-full"></div>
             </div>
             <h1 class="text-2xl font-extrabold tracking-tight">Akshat Gaur</h1>
-            <p class="text-green-100 text-sm font-medium mt-1 uppercase tracking-widest">AI & ML Developer</p>
+            <p class="text-green-100 text-[10px] font-bold uppercase tracking-[0.2em] mt-2">AI & ML Developer</p>
         </div>
 
         <nav class="flex-grow space-y-2 mb-10">
-            <a href="#about" class="nav-link flex items-center gap-4 p-3 text-sm font-semibold active"><i data-lucide="user" class="w-4 h-4"></i> About Me</a>
-            <a href="#portfolio" class="nav-link flex items-center gap-4 p-3 text-sm font-semibold"><i data-lucide="layout-grid" class="w-4 h-4"></i> Portfolio</a>
-            <a href="#internship" class="nav-link flex items-center gap-4 p-3 text-sm font-semibold"><i data-lucide="award" class="w-4 h-4"></i> Internship Proof</a>
-            <a href="#skills" class="nav-link flex items-center gap-4 p-3 text-sm font-semibold"><i data-lucide="code-2" class="w-4 h-4"></i> Skills</a>
+            <a href="#about" class="nav-link flex items-center gap-4 p-3 text-sm font-bold active"><i data-lucide="user" class="w-4 h-4"></i> About</a>
+            <a href="#internship" class="nav-link flex items-center gap-4 p-3 text-sm font-bold"><i data-lucide="award" class="w-4 h-4"></i> Internship Proof</a>
+            <a href="#portfolio" class="nav-link flex items-center gap-4 p-3 text-sm font-bold"><i data-lucide="layout-grid" class="w-4 h-4"></i> Portfolio</a>
         </nav>
 
         <div class="flex justify-center gap-6 mb-8 opacity-70">
             <a href="https://github.com/akshatgaur64" target="_blank"><i data-lucide="github" class="w-5 h-5"></i></a>
             <a href="https://www.linkedin.com/in/akshat-gaur-b608ba2a9" target="_blank"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
         </div>
-
-        <a href="public/Akshat_Gaur_Resume.pdf" target="_blank" class="bg-white text-green-700 py-4 rounded-xl font-bold text-center text-sm shadow-lg hover:bg-green-50 transition uppercase tracking-widest">
-            Download Resume
-        </a>
+        <a href="Akshat_Gaur_Resume.pdf" target="_blank" class="bg-white text-green-700 py-4 rounded-xl font-black text-center text-sm shadow-lg hover:bg-green-50 transition uppercase tracking-widest">Resume</a>
     </aside>
 
     <main class="flex-1 md:ml-80">
         <section id="about" class="min-h-screen flex items-center px-8 md:px-20 py-20 bg-white">
             <div class="grid md:grid-cols-2 gap-16 items-center">
-                <div class="space-y-6">
-                    <h2 class="text-huge font-extrabold tracking-tighter text-gray-900">Akshat Gaur</h2>
-                    <p class="text-green-600 font-bold uppercase text-xs tracking-[0.4em]">Informatics Analyst • Govt of Rajasthan</p>
-                    <p class="max-w-xl text-gray-500 text-xl font-medium leading-relaxed">
-                        I specialize in engineering high-fidelity systems in <span class="text-gray-900 font-bold">NLP, Deep Learning, and Predictive Analytics</span>. Verified impact at the <strong>SDM Office</strong>.
+                <div class="animate-fade">
+                    <h1 class="text-huge font-extrabold tracking-tighter text-gray-900 mb-6 italic">Akshat Gaur</h1>
+                    <p class="text-xl text-gray-500 font-medium leading-relaxed mb-10">
+                        Expertise in <span class="text-black font-bold">NLP, Deep Learning, and Predictive Analytics</span>. Specialized in building automated, real-world AI systems with validated impact at the <strong>SDM Office</strong>.
                     </p>
-                    <div class="flex gap-4 pt-6">
-                        <a href="#portfolio" class="bg-black text-white px-8 py-4 rounded-xl font-bold text-sm uppercase tracking-widest hover:bg-gray-800 transition">View Portfolio</a>
-                        <a href="mailto:akshatgaur44@gmail.com" class="border border-gray-200 px-8 py-4 rounded-xl font-bold text-sm uppercase tracking-widest hover:bg-gray-50 transition">Email Me</a>
+                    <div class="flex gap-4">
+                        <a href="#internship" class="bg-green-600 text-white px-8 py-4 rounded-xl font-bold shadow-lg shadow-green-200">Verify Impact</a>
+                        <a href="Akshat_Gaur_Resume.pdf" class="border border-gray-200 px-8 py-4 rounded-xl font-bold hover:bg-gray-50 transition">Resume</a>
                     </div>
                 </div>
                 <div class="hidden md:block">
-                    <img src="public/akshat_profile.png" alt="Akshat Gaur" class="profile-photo rounded-[3rem] shadow-2xl w-full">
+                    <img src="akshat_profile.png" class="rounded-[3rem] shadow-2xl w-full">
                 </div>
             </div>
         </section>
 
-        <section id="internship" class="py-32 px-8 md:px-20 bg-white border-y border-gray-100">
-            <div class="max-w-4xl mx-auto">
-                <div class="text-center mb-16 space-y-4">
-                    <span class="text-green-600 font-black text-[10px] uppercase tracking-widest">Experience & Verification</span>
-                    <h2 class="text-4xl font-extrabold tracking-tight">Government Informatics Audit</h2>
-                    <p class="text-gray-500 text-lg italic">Validated <span class="text-black font-bold">10,000+ citizen records</span> for the SDM Office Chittorgarh.</p>
-                </div>
+        <section id="internship" class="py-32 px-8 md:px-20 bg-gray-50/50 border-y border-gray-100">
+            <h2 class="text-4xl font-extrabold tracking-tight mb-16 italic text-gray-900">Government Internship Proof</h2>
+            <div class="grid grid-cols-1 gap-10">
                 
-                <div class="grid grid-cols-1 gap-10">
-                    <div class="studio-card p-4">
-                        <p class="text-[10px] font-bold uppercase tracking-widest mb-4 ml-4 text-gray-400">Internship Work Dashboard (Excel Audit)</p>
-                        <img src="public/Internship_work_dashboard.png" class="w-full rounded-xl border border-gray-100" alt="Excel Work Proof">
-                    </div>
+                <div class="studio-card p-6 bg-white">
+                    <p class="text-[10px] font-bold uppercase tracking-widest text-green-600 mb-4">Verification: Internship Work Dashboard</p>
+                    <img src="Internship_work_dashboard.png" class="w-full rounded-2xl border border-gray-100 shadow-sm" alt="Work Dashboard">
+                </div>
 
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div class="studio-card p-4">
-                            <p class="text-[10px] font-bold uppercase tracking-widest mb-4 ml-4 text-gray-400">Database Reconciliation Table</p>
-                            <img src="public/Table_of_government_records.png" class="w-full rounded-xl border border-gray-100" alt="Database Proof">
-                        </div>
-                        <div class="studio-card p-10 flex flex-col justify-center items-center text-center bg-gray-50">
-                            <i data-lucide="shield-check" class="w-12 h-12 text-green-500 mb-4"></i>
-                            <h4 class="font-bold text-xl mb-4">SDM Certified</h4>
-                            <p class="text-sm text-gray-500 mb-8 leading-relaxed">Official verification of Informatics Analyst role and technical excellence in database management.</p>
-                            <a href="public/internship_certificate.pdf" target="_blank" class="bg-black text-white px-6 py-3 rounded-xl text-xs font-bold uppercase tracking-widest hover:bg-green-600 transition">View Full Certificate</a>
-                        </div>
+                <div class="grid md:grid-cols-2 gap-10">
+                    <div class="studio-card p-6 bg-white">
+                        <p class="text-[10px] font-bold uppercase tracking-widest text-green-600 mb-4">10,000+ Record Audit Proof</p>
+                        <img src="Table of government records.png" class="w-full rounded-2xl border border-gray-100 shadow-sm" alt="Government Records">
+                    </div>
+                    <div class="studio-card p-10 flex flex-col justify-center items-center text-center bg-green-600 text-white">
+                        <i data-lucide="award" class="w-16 h-16 mb-6"></i>
+                        <h3 class="text-2xl font-black mb-4 uppercase tracking-tighter">SDM Verified</h3>
+                        <p class="text-green-100 text-sm mb-10 leading-relaxed">Official certification for Informatics Analyst role, validating 40% efficiency gains in government data automation.</p>
+                        <a href="internship_certificate.pdf" target="_blank" class="bg-white text-green-700 px-10 py-4 rounded-2xl font-black text-xs uppercase tracking-widest hover:bg-green-50 transition">Open Certificate</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="portfolio" class="py-32 px-8 md:px-20 bg-gray-50/50">
-            <h2 class="text-3xl font-extrabold tracking-tight mb-20 text-center">Selected AI Projects</h2>
+        <section id="portfolio" class="py-32 px-8 md:px-20 bg-white">
+            <h2 class="text-4xl font-extrabold tracking-tight mb-20 italic">Portfolio Projects</h2>
             <div class="grid lg:grid-cols-2 gap-12">
-                <div class="studio-card p-8">
-                    <h3 class="text-2xl font-extrabold mb-4">JanSahay: AI Governance</h3>
-                    <p class="text-gray-500 text-sm mb-6 leading-relaxed">Automated classification of 10,000+ grievances with 94.2% accuracy using NLP and Random Forest classification.</p>
-                    <img src="public/dashboard.png" class="rounded-xl border shadow-lg mb-6" alt="JanSahay Dashboard">
-                    <div class="flex gap-2"><span class="tech-badge">Python</span><span class="tech-badge">NLP</span><span class="tech-badge">Flask</span></div>
+                <div class="studio-card p-8 group">
+                    <h3 class="text-2xl font-extrabold mb-4 tracking-tighter">JanSahay: AI Governance</h3>
+                    <p class="text-gray-500 text-sm mb-8 leading-relaxed italic">Situation: Manual grievance system. Result: 94.2% AI resolution accuracy.</p>
+                    <img src="dashboard.png" class="rounded-2xl border border-gray-100 shadow-xl mb-8 group-hover:scale-105 transition duration-500" alt="JanSahay">
+                    <div class="flex gap-2"><span class="tech-badge">NLP</span><span class="tech-badge">Random Forest</span></div>
                 </div>
-                <div class="studio-card p-8">
-                    <h3 class="text-2xl font-extrabold mb-4">Weather Forecast Engine</h3>
-                    <p class="text-gray-500 text-sm mb-6 leading-relaxed">Predictive atmospheric analytics platform built on Django, utilizing historical data APIs and ML regressors.</p>
-                    <img src="public/home_page.png" class="rounded-xl border shadow-lg mb-6" alt="Weather UI">
-                    <div class="flex gap-2"><span class="tech-badge">Django</span><span class="tech-badge">Regression</span><span class="tech-badge">Pandas</span></div>
+                <div class="studio-card p-8 group">
+                    <h3 class="text-2xl font-extrabold mb-4 tracking-tighter">Weather Forecast Engine</h3>
+                    <p class="text-gray-500 text-sm mb-8 leading-relaxed italic">Real-time predictive analytics using Django and historical weather APIs.</p>
+                    <img src="home_page.png" class="rounded-2xl border border-gray-100 shadow-xl mb-8 group-hover:scale-105 transition duration-500" alt="Weather">
+                    <div class="flex gap-2"><span class="tech-badge">Django</span><span class="tech-badge">Regression</span></div>
                 </div>
             </div>
         </section>
 
         <footer id="contact" class="py-32 px-8 md:px-20 bg-gray-900 text-white rounded-t-[4rem] text-center">
-            <h2 class="text-4xl font-extrabold mb-6 italic tracking-tighter">Open to opportunities.</h2>
-            <div class="flex justify-center gap-10 mt-12 text-sm font-bold opacity-60">
-                <a href="mailto:akshatgaur44@gmail.com" class="hover:text-green-400 transition">Email</a>
+            <h2 class="text-5xl font-extrabold mb-10 italic tracking-tighter">Open to collaboration.</h2>
+            <div class="flex flex-col md:flex-row justify-center gap-10 items-center text-sm font-bold opacity-60">
+                <a href="mailto:akshatgaur44@gmail.com" class="hover:text-green-400 transition">akshatgaur44@gmail.com</a>
                 <a href="https://www.linkedin.com/in/akshat-gaur-b608ba2a9" target="_blank" class="hover:text-blue-400 transition">LinkedIn</a>
                 <a href="https://github.com/akshatgaur64" target="_blank" class="hover:text-gray-400 transition">GitHub</a>
             </div>
         </footer>
     </main>
 
-    <script>
-        lucide.createIcons();
-    </script>
+    <script>lucide.createIcons();</script>
 </body>
 </html>
